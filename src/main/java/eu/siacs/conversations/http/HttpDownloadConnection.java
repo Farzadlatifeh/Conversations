@@ -555,7 +555,9 @@ public class HttpDownloadConnection implements Transferable {
 
         private void updateImageBounds() {
             final boolean privateMessage = message.isPrivateMessage();
-            message.setType(privateMessage ? Message.TYPE_PRIVATE_FILE : Message.TYPE_FILE);
+            if (!message.isSticker()) {
+                message.setType(privateMessage ? Message.TYPE_PRIVATE_FILE : Message.TYPE_FILE);
+            }
             final String url;
             final String ref = mUrl.fragment();
             if (ref != null && AesGcmURL.IV_KEY.matcher(ref).matches()) {

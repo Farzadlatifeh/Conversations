@@ -1305,8 +1305,10 @@ public class FileBackend {
         final String mime = MimeUtils.getMimeType(file);
         final boolean image =
                 message.getType() == Message.TYPE_IMAGE
+                        || message.isSticker()
                         || (mime != null && mime.startsWith("image/"));
         final boolean privateMessage = message.isPrivateMessage();
+        final boolean sticker = message.isSticker();
         final StringBuilder body = new StringBuilder();
         if (url != null) {
             body.append(url);
@@ -1370,9 +1372,11 @@ public class FileBackend {
         message.setBody(body.toString());
         message.setDeleted(false);
         message.setType(
-                privateMessage
-                        ? Message.TYPE_PRIVATE_FILE
-                        : (image ? Message.TYPE_IMAGE : Message.TYPE_FILE));
+                sticker
+                        ? (privateMessage ? Message.TYPE_PRIVATE_STICKER : Message.TYPE_STICKER)
+                        : (privateMessage
+                                ? Message.TYPE_PRIVATE_FILE
+                                : (image ? Message.TYPE_IMAGE : Message.TYPE_FILE)));
     }
 
     private int getMediaRuntime(final File file) {

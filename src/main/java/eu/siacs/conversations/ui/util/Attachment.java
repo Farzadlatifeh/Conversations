@@ -133,6 +133,7 @@ public final class Attachment implements Parcelable {
     public enum Type {
         FILE,
         IMAGE,
+        STICKER,
         LOCATION,
         RECORDING
     }
@@ -226,6 +227,7 @@ public final class Attachment implements Parcelable {
 
     public boolean renderThumbnail() {
         return type == Type.IMAGE
+                || type == Type.STICKER
                 || (type == Type.FILE && mime != null && renderFileThumbnail(mime));
     }
 

@@ -193,6 +193,11 @@ public class ConversationFragment extends XmppFragment
                             AttachmentChoice.Type.PICTURE,
                             true),
                     new AttachmentChoice(
+                            R.drawable.ic_sticker_24dp,
+                            R.string.attachment_choice_sticker,
+                            AttachmentChoice.Type.STICKER,
+                            false),
+                    new AttachmentChoice(
                             R.drawable.ic_description_24dp,
                             R.string.attachment_choice_file,
                             AttachmentChoice.Type.FILE,
@@ -243,6 +248,7 @@ public class ConversationFragment extends XmppFragment
     public static final int ATTACHMENT_CHOICE_INVALID = 0x0306;
     public static final int ATTACHMENT_CHOICE_RECORD_VIDEO = 0x0307;
     public static final int ATTACHMENT_CHOICE_CONTACT = 0x0308;
+    public static final int ATTACHMENT_CHOICE_STICKER = 0x0309;
 
     public static final String STATE_CONVERSATION_UUID =
             ConversationFragment.class.getName() + ".uuid";
@@ -1029,6 +1035,37 @@ public class ConversationFragment extends XmppFragment
                 ContextCompat.getMainExecutor(requireContext()));
     }
 
+    private void attachStickerToConversation(
+            final Conversation conversation, final Uri uri, final String type) {
+        if (conversation == null) {
+            return;
+        }
+        final Toast prepareFileToast =
+                Toast.makeText(getActivity(), getText(R.string.preparing_image), Toast.LENGTH_LONG);
+        prepareFileToast.show();
+        requireXmppActivity().delegateUriPermissionsToService(uri);
+        final var future =
+                requireXmppActivity()
+                        .xmppConnectionService
+                        .attachStickerToConversation(conversation, uri, type);
+        Futures.addCallback(
+                future,
+                new FutureCallback<>() {
+                    @Override
+                    public void onSuccess(final Void result) {
+                        prepareFileToast.cancel();
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull final Throwable t) {
+                        Log.d(Config.LOGTAG, "could not attach sticker", t);
+                        prepareFileToast.cancel();
+                        displayToastForException(t);
+                    }
+                },
+                ContextCompat.getMainExecutor(requireContext()));
+    }
+
     private void displayToastForException(final Throwable t) {
         if (t instanceof FileBackend.FileCopyException e) {
             Toast.makeText(requireContext(), e.getResId(), Toast.LENGTH_LONG).show();
@@ -1164,6 +1201,13 @@ public class ConversationFragment extends XmppFragment
                 mediaPreviewAdapter.addMediaPreviews(imageUris);
                 toggleInputMethod();
                 break;
+            case ATTACHMENT_CHOICE_STICKER:
+                final List<Attachment> stickerUris =
+                        Attachment.extractAttachments(
+                                requireContext(), data, Attachment.Type.STICKER);
+                mediaPreviewAdapter.addMediaPreviews(stickerUris);
+                toggleInputMethod();
+                break;
             case ATTACHMENT_CHOICE_TAKE_PHOTO:
                 final Uri takePhotoUri = pendingTakePhotoUri.pop();
                 if (takePhotoUri != null) {
@@ -1266,6 +1310,9 @@ public class ConversationFragment extends XmppFragment
                                     "ConversationsActivity.commitAttachments() - attaching image to"
                                             + " conversations. CHOOSE_IMAGE");
                             attachImageToConversation(
+                                    conversation, attachment.getUri(), attachment.getMime());
+                        } else if (attachment.getType() == Attachment.Type.STICKER) {
+                            attachStickerToConversation(
                                     conversation, attachment.getUri(), attachment.getMime());
                         } else {
                             Log.d(
@@ -1926,6 +1973,7 @@ public class ConversationFragment extends XmppFragment
                 switch (choice) {
                     case CAMERA -> ATTACHMENT_CHOICE_TAKE_PHOTO;
                     case PICTURE -> ATTACHMENT_CHOICE_CHOOSE_IMAGE;
+                    case STICKER -> ATTACHMENT_CHOICE_STICKER;
                     case FILE -> ATTACHMENT_CHOICE_CHOOSE_FILE;
                     case LOCATION -> ATTACHMENT_CHOICE_LOCATION;
                     case RECORDING -> ATTACHMENT_CHOICE_RECORD_VOICE;
@@ -2279,6 +2327,15 @@ public class ConversationFragment extends XmppFragment
                             intent.setType("image/*");
                             yield Intent.createChooser(
                                     intent, getString(R.string.perform_action_with));
+                        }
+                    case ATTACHMENT_CHOICE_STICKER:
+                        {
+                            final var intent = new Intent(Intent.ACTION_GET_CONTENT);
+                            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                            intent.setType("image/*");
+                            intent.addCategory(Intent.CATEGORY_OPENABLE);
+                            yield Intent.createChooser(
+                                    intent, getString(R.string.attachment_choice_sticker));
                         }
                     case ATTACHMENT_CHOICE_RECORD_VIDEO:
                         {

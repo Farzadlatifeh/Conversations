@@ -66,6 +66,8 @@ public class Message extends AbstractEntity
     public static final int TYPE_PRIVATE = 4;
     public static final int TYPE_PRIVATE_FILE = 5;
     public static final int TYPE_RTP_SESSION = 6;
+    public static final int TYPE_STICKER = 7;
+    public static final int TYPE_PRIVATE_STICKER = 8;
 
     public static final String CONVERSATION = "conversationUuid";
     public static final String COUNTERPART = "counterpart";
@@ -704,7 +706,8 @@ public class Message extends AbstractEntity
         return status != STATUS_RECEIVED
                 && !isCarbon()
                 && type != Message.TYPE_RTP_SESSION
-                && type != Message.TYPE_STATUS;
+                && type != Message.TYPE_STATUS
+                && !isSticker();
     }
 
     public void setCounterparts(List<MucOptions.User> counterparts) {
@@ -897,11 +900,19 @@ public class Message extends AbstractEntity
     }
 
     public boolean isPrivateMessage() {
-        return type == TYPE_PRIVATE || type == TYPE_PRIVATE_FILE;
+        return type == TYPE_PRIVATE || type == TYPE_PRIVATE_FILE || type == TYPE_PRIVATE_STICKER;
     }
 
     public boolean isFileOrImage() {
-        return type == TYPE_FILE || type == TYPE_IMAGE || type == TYPE_PRIVATE_FILE;
+        return type == TYPE_FILE
+                || type == TYPE_IMAGE
+                || type == TYPE_PRIVATE_FILE
+                || type == TYPE_STICKER
+                || type == TYPE_PRIVATE_STICKER;
+    }
+
+    public boolean isSticker() {
+        return type == TYPE_STICKER || type == TYPE_PRIVATE_STICKER;
     }
 
     public boolean isTypeText() {

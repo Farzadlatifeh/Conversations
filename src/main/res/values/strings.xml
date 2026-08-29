@@ -1186,6 +1186,7 @@
     <string name="search_in_chats">Search in chats</string>
     <string name="search_for_x_in_chats">Search for \"%s\" in chats</string>
     <string name="attachment_choice_gallery">Gallery</string>
+    <string name="attachment_choice_sticker">Sticker</string>
     <string name="attachment_choice_file">File</string>
     <string name="attachment_choice_location">Location</string>
     <string name="attachment_choice_camera">Camera</string>
