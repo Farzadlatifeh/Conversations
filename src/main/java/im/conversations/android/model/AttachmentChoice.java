@@ -11,6 +11,7 @@ public record AttachmentChoice(
         LOCATION,
         CAMERA,
         PICTURE,
+        STICKER,
         FILE,
         VIDEO,
         CONTACT

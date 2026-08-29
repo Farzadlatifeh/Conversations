@@ -288,6 +288,8 @@ public class MessageParser extends AbstractParser
 
         final var oob = packet.getExtension(OutOfBandData.class);
         final String oobUrl = oob != null ? oob.getURL() : null;
+        final boolean sticker = packet.hasChild("sticker", Namespace.STICKERS);
+        final String stickerFileParams = sticker ? getStickerFileParams(packet) : null;
         final var replace = packet.getExtension(Replace.class);
         final var replacementId = replace == null ? null : replace.getId();
         final var axolotlEncrypted = packet.getOnlyExtension(Encrypted.class);
@@ -365,7 +367,8 @@ public class MessageParser extends AbstractParser
         if ((body != null && !bodyIsFallback)
                 || pgpEncrypted != null
                 || (axolotlEncrypted != null && axolotlEncrypted.hasExtension(Payload.class))
-                || oobUrl != null) {
+                || oobUrl != null
+                || stickerFileParams != null) {
             final boolean conversationIsProbablyMuc =
                     isTypeGroupChat
                             || mucUserElement != null
@@ -504,6 +507,14 @@ public class MessageParser extends AbstractParser
                 if (conversationMultiMode) {
                     message.setTrueCounterpart(origin);
                 }
+            } else if (stickerFileParams != null) {
+                message =
+                        new Message(
+                                conversation, stickerFileParams, Message.ENCRYPTION_NONE, status);
+                message.setOob(true);
+            } else if (sticker && oobUrl != null) {
+                message = new Message(conversation, oobUrl, Message.ENCRYPTION_NONE, status);
+                message.setOob(true);
             } else if (body == null && oobUrl != null) {
                 message = new Message(conversation, oobUrl, Message.ENCRYPTION_NONE, status);
                 message.setOob(true);
@@ -545,6 +556,18 @@ public class MessageParser extends AbstractParser
                 }
             } else {
                 updateLastseen(account, from);
+            }
+
+            final boolean stickerHasDownload =
+                    stickerFileParams != null
+                            || oobUrl != null
+                            || (message.getFileParams().url != null);
+            if (sticker && stickerHasDownload) {
+                message.setType(
+                        message.isPrivateMessage()
+                                ? Message.TYPE_PRIVATE_STICKER
+                                : Message.TYPE_STICKER);
+                message.setOob(true);
             }
 
             if (replacementId != null && mXmppConnectionService.allowMessageCorrection()) {
@@ -892,5 +915,42 @@ public class MessageParser extends AbstractParser
             return new Pair<>(forwardedMessage, timestamp);
         }
         return null;
+    }
+
+    /** Returns Conversations' compact URL/size/dimensions representation for XEP-0447 data. */
+    private static String getStickerFileParams(
+            final im.conversations.android.xmpp.model.stanza.Message packet) {
+        final Element sharing = packet.findChild("file-sharing", Namespace.STATELESS_FILE_SHARING);
+        if (sharing == null) {
+            return null;
+        }
+        final Element file = sharing.findChild("file", Namespace.FILE_METADATA);
+        if (file != null) {
+            final String mediaType = file.findChildContent("media-type");
+            if (mediaType != null && !mediaType.startsWith("image/")) {
+                return null;
+            }
+        }
+        final Element sources = sharing.findChild("sources");
+        final Element urlData =
+                sources == null ? null : sources.findChild("url-data", Namespace.URL_DATA);
+        final String target = urlData == null ? null : urlData.getAttribute("target");
+        final String url = target == null ? null : eu.siacs.conversations.http.URL.tryParse(target);
+        if (url == null) {
+            return null;
+        }
+        if (file == null) {
+            return url;
+        }
+        final String size = file.findChildContent("size");
+        final String width = file.findChildContent("width");
+        final String height = file.findChildContent("height");
+        if (width != null && height != null) {
+            return url + '|' + (size == null ? "0" : size) + '|' + width + '|' + height;
+        } else if (size != null) {
+            return url + '|' + size;
+        } else {
+            return url;
+        }
     }
 }

@@ -7,6 +7,7 @@ import eu.siacs.conversations.entities.Conversation;
 import eu.siacs.conversations.entities.Conversational;
 import eu.siacs.conversations.entities.Message;
 import eu.siacs.conversations.services.XmppConnectionService;
+import eu.siacs.conversations.xml.Element;
 import eu.siacs.conversations.xml.Namespace;
 import eu.siacs.conversations.xmpp.Jid;
 import im.conversations.android.xmpp.model.correction.Replace;
@@ -75,6 +76,7 @@ public class MessageGenerator extends AbstractGenerator {
         packet.addChild("encryption", "urn:xmpp:eme:0")
                 .setAttribute("name", "OMEMO")
                 .setAttribute("namespace", AxolotlService.PEP_PREFIX);
+        addStickerMarker(packet, message);
         return packet;
     }
 
@@ -96,6 +98,7 @@ public class MessageGenerator extends AbstractGenerator {
             final Message.FileParams fileParams = message.getFileParams();
             content = fileParams.url;
             packet.addChild("x", Namespace.OOB).addChild("url").setContent(content);
+            addStickerPayload(packet, message);
         } else {
             content = message.getBody();
         }
@@ -110,6 +113,7 @@ public class MessageGenerator extends AbstractGenerator {
             final String url = fileParams.url;
             packet.setBody(url);
             packet.addChild("x", Namespace.OOB).addChild("url").setContent(url);
+            addStickerPayload(packet, message);
         } else {
             packet.setBody(PGP_FALLBACK_MESSAGE);
             if (message.getEncryption() == Message.ENCRYPTION_DECRYPTED) {
@@ -121,5 +125,47 @@ public class MessageGenerator extends AbstractGenerator {
                     .setAttribute("namespace", "jabber:x:encrypted");
         }
         return packet;
+    }
+
+    private static void addStickerMarker(
+            final im.conversations.android.xmpp.model.stanza.Message packet,
+            final Message message) {
+        if (message.isSticker()) {
+            packet.addChild("sticker", Namespace.STICKERS);
+        }
+    }
+
+    private static void addStickerPayload(
+            final im.conversations.android.xmpp.model.stanza.Message packet,
+            final Message message) {
+        if (!message.isSticker()) {
+            return;
+        }
+        addStickerMarker(packet, message);
+        final Message.FileParams params = message.getFileParams();
+        if (params.url == null) {
+            return;
+        }
+        final Element sharing =
+                packet.addChild("file-sharing", Namespace.STATELESS_FILE_SHARING)
+                        .setAttribute("disposition", "inline");
+        final Element file = sharing.addChild("file", Namespace.FILE_METADATA);
+        final String mimeType = message.getMimeType();
+        if (mimeType != null) {
+            file.addChild("media-type").setContent(mimeType);
+        }
+        if (params.size != null) {
+            file.addChild("size").setContent(Long.toString(params.size));
+        }
+        if (params.width > 0 && params.height > 0) {
+            file.addChild("width").setContent(Integer.toString(params.width));
+            file.addChild("height").setContent(Integer.toString(params.height));
+        }
+        sharing.addChild("sources")
+                .addChild("url-data", Namespace.URL_DATA)
+                .setAttribute("target", params.url);
+        packet.addChild("fallback", Namespace.FALLBACK_INDICATION)
+                .setAttribute("for", Namespace.STATELESS_FILE_SHARING)
+                .addChild("body");
     }
 }

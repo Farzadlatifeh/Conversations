@@ -429,6 +429,34 @@ public class XmppConnectionService extends Service {
                 future, v -> encryptIfNeededAndSend(message), MoreExecutors.directExecutor());
     }
 
+    /**
+     * Attaches an image as an XEP-0449 sticker. The source is copied without recompression so that
+     * transparency and animation are preserved.
+     */
+    public ListenableFuture<Void> attachStickerToConversation(
+            final Conversation conversation, final Uri uri, final String type) {
+        final String mimeType = MimeUtils.guessMimeTypeFromUriAndMime(this, uri, type);
+        if (mimeType == null || !mimeType.startsWith("image/")) {
+            return Futures.immediateFailedFuture(
+                    new IllegalArgumentException("Stickers must be image files"));
+        }
+        final Message message;
+        if (conversation.getNextEncryption() == Message.ENCRYPTION_PGP) {
+            message = new Message(conversation, "", Message.ENCRYPTION_DECRYPTED);
+        } else {
+            message = new Message(conversation, "", conversation.getNextEncryption());
+        }
+        if (Message.configurePrivateFileMessage(message)) {
+            message.setType(Message.TYPE_PRIVATE_STICKER);
+        } else {
+            message.setCounterpart(conversation.getNextCounterpart());
+            message.setType(Message.TYPE_STICKER);
+        }
+        final var future = submitAttachToConversation(uri, mimeType, message);
+        return Futures.transformAsync(
+                future, v -> encryptIfNeededAndSend(message), MoreExecutors.directExecutor());
+    }
+
     public Conversation find(Bookmark bookmark) {
         return find(bookmark.getAccount(), bookmark.getAddress());
     }
