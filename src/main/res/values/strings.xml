@@ -1188,8 +1188,11 @@
     <string name="attachment_choice_gallery">Gallery</string>
     <string name="attachment_choice_sticker">Sticker</string>
     <string name="open_sticker_picker">Open sticker picker</string>
+    <string name="stickers">Stickers</string>
+    <string name="sticker_packs">Packs</string>
+    <string name="sticker_pack_options_explanation">Select an installed pack or import an XEP-0449 pack.</string>
     <string name="starter_sticker_pack">Built-in starter pack</string>
-    <string name="starter_sticker_pack_summary">Six original stickers bundled with Conversations.</string>
+    <string name="starter_sticker_pack_summary">Twenty-four stickers bundled with Conversations.</string>
     <string name="unnamed_sticker_pack">Sticker pack</string>
     <string name="choose_custom_sticker">Choose custom image</string>
     <string name="choose_sticker_pack">Choose sticker pack</string>
