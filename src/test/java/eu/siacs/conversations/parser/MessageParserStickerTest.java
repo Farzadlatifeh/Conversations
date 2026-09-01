@@ -28,6 +28,19 @@ public class MessageParserStickerTest {
     }
 
     @Test
+    public void recognizesMovimTreeWithLostImportedNamespaces() {
+        final Message packet = new Message();
+        packet.addChild("html")
+                .addChild("body")
+                .addChild("p")
+                .addChild("img")
+                .setAttribute("src", "cid:" + CID)
+                .setAttribute("alt", "Sticker");
+
+        assertEquals(CID, MessageParser.getXhtmlStickerCid(packet));
+    }
+
+    @Test
     public void recognizesAdditionalMovimWrapper() {
         final Message packet = new Message();
         final Element body =
