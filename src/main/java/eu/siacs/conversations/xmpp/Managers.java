@@ -9,6 +9,7 @@ import eu.siacs.conversations.xmpp.manager.AdHocCommandsManager;
 import eu.siacs.conversations.xmpp.manager.AvatarManager;
 import eu.siacs.conversations.xmpp.manager.AxolotlManager;
 import eu.siacs.conversations.xmpp.manager.BlockingManager;
+import eu.siacs.conversations.xmpp.manager.BobManager;
 import eu.siacs.conversations.xmpp.manager.BookmarkManager;
 import eu.siacs.conversations.xmpp.manager.CarbonsManager;
 import eu.siacs.conversations.xmpp.manager.ChatStateManager;
@@ -40,6 +41,7 @@ import eu.siacs.conversations.xmpp.manager.ReactionManager;
 import eu.siacs.conversations.xmpp.manager.RegistrationManager;
 import eu.siacs.conversations.xmpp.manager.RosterManager;
 import eu.siacs.conversations.xmpp.manager.StanzaIdManager;
+import eu.siacs.conversations.xmpp.manager.StickerPackManager;
 import eu.siacs.conversations.xmpp.manager.StreamHostManager;
 import eu.siacs.conversations.xmpp.manager.UnifiedPushManager;
 import eu.siacs.conversations.xmpp.manager.VCardManager;
@@ -58,6 +60,7 @@ public class Managers {
                 .put(AvatarManager.class, new AvatarManager(context, connection))
                 .put(AxolotlManager.class, new AxolotlManager(context, connection))
                 .put(BlockingManager.class, new BlockingManager(context, connection))
+                .put(BobManager.class, new BobManager(context, connection))
                 .put(BookmarkManager.class, new BookmarkManager(context, connection))
                 .put(CarbonsManager.class, new CarbonsManager(context, connection))
                 .put(ChatStateManager.class, new ChatStateManager(context, connection))
@@ -97,6 +100,7 @@ public class Managers {
                 .put(RegistrationManager.class, new RegistrationManager(context, connection))
                 .put(RosterManager.class, new RosterManager(context, connection))
                 .put(StanzaIdManager.class, new StanzaIdManager(context, connection))
+                .put(StickerPackManager.class, new StickerPackManager(context, connection))
                 .put(StreamHostManager.class, new StreamHostManager(context, connection))
                 .put(UnifiedPushManager.class, new UnifiedPushManager(context, connection))
                 .put(VCardManager.class, new VCardManager(context, connection))

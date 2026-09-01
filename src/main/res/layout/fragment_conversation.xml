@@ -94,7 +94,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginVertical="8sp"
                         android:layout_marginHorizontal="12dp"
-                        android:layout_toStartOf="@+id/attach_button"
+                        android:layout_toStartOf="@+id/sticker_button"
                         android:orientation="vertical">
 
                         <TextView
@@ -140,6 +140,18 @@
                         </eu.siacs.conversations.ui.widget.EditMessage>
 
                     </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/sticker_button"
+                        style="?attr/materialIconButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/attach_button"
+                        android:contentDescription="@string/open_sticker_picker"
+                        app:icon="@drawable/ic_sticker_24dp"
+                        app:iconSize="24dp"
+                        app:iconTint="?colorOnTertiaryContainer" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/attach_button"

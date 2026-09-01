@@ -28,6 +28,7 @@ import android.os.SystemClock;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -49,6 +50,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -113,6 +116,7 @@ import eu.siacs.conversations.services.QuickConversationsService;
 import eu.siacs.conversations.services.XmppConnectionService;
 import eu.siacs.conversations.ui.adapter.MediaPreviewAdapter;
 import eu.siacs.conversations.ui.adapter.MessageAdapter;
+import eu.siacs.conversations.ui.stickers.StickerPack;
 import eu.siacs.conversations.ui.util.ActivityResult;
 import eu.siacs.conversations.ui.util.Attachment;
 import eu.siacs.conversations.ui.util.ConversationMenuConfigurator;
@@ -164,6 +168,7 @@ import im.conversations.android.xmpp.model.muc.Role;
 import im.conversations.android.xmpp.model.stanza.Presence;
 import im.conversations.android.xmpp.model.state.Composing;
 import im.conversations.android.xmpp.model.state.Paused;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZonedDateTime;
@@ -998,9 +1003,10 @@ public class ConversationFragment extends XmppFragment
     }
 
     public void attachEditorContentToConversation(Uri uri) {
-        mediaPreviewAdapter.addMediaPreviews(
-                Attachment.of(getActivity(), uri, Attachment.Type.FILE));
-        toggleInputMethod();
+        final ArrayList<Attachment> attachments = new ArrayList<>();
+        attachments.add(Attachment.ofSticker(requireContext(), uri, "Sticker", null));
+        mediaPreviewAdapter.addMediaPreviews(attachments);
+        commitAttachments();
     }
 
     private void attachImageToConversation(
@@ -1037,6 +1043,15 @@ public class ConversationFragment extends XmppFragment
 
     private void attachStickerToConversation(
             final Conversation conversation, final Uri uri, final String type) {
+        attachStickerToConversation(conversation, uri, type, "Sticker", null);
+    }
+
+    private void attachStickerToConversation(
+            final Conversation conversation,
+            final Uri uri,
+            final String type,
+            final String fallback,
+            final String packId) {
         if (conversation == null) {
             return;
         }
@@ -1047,7 +1062,7 @@ public class ConversationFragment extends XmppFragment
         final var future =
                 requireXmppActivity()
                         .xmppConnectionService
-                        .attachStickerToConversation(conversation, uri, type);
+                        .attachStickerToConversation(conversation, uri, type, fallback, packId);
         Futures.addCallback(
                 future,
                 new FutureCallback<>() {
@@ -1313,7 +1328,11 @@ public class ConversationFragment extends XmppFragment
                                     conversation, attachment.getUri(), attachment.getMime());
                         } else if (attachment.getType() == Attachment.Type.STICKER) {
                             attachStickerToConversation(
-                                    conversation, attachment.getUri(), attachment.getMime());
+                                    conversation,
+                                    attachment.getUri(),
+                                    attachment.getMime(),
+                                    attachment.getStickerFallback(),
+                                    attachment.getStickerPackId());
                         } else {
                             Log.d(
                                     Config.LOGTAG,
@@ -1442,6 +1461,7 @@ public class ConversationFragment extends XmppFragment
         }
         binding.attachButton.setToggleCheckedStateOnClick(false);
         binding.attachButton.setOnClickListener((v) -> toggleAttachmentChoicesVisibility());
+        binding.stickerButton.setOnClickListener(v -> showStickerPicker());
         binding.attachmentChoicesFlow.setReferencedIds(Ints.toArray(viewIdBuilder.build()));
         binding.getRoot().setOnClickListener(null); // TODO why the fuck did we do this?
         binding.toolbar.addMenuProvider(
@@ -1969,6 +1989,11 @@ public class ConversationFragment extends XmppFragment
     }
 
     private void handleAttachmentChoice(final AttachmentChoice.Type choice) {
+        if (choice == AttachmentChoice.Type.STICKER) {
+            setAttachmentChoicesVisibility(false);
+            showStickerPicker();
+            return;
+        }
         attachFile(
                 switch (choice) {
                     case CAMERA -> ATTACHMENT_CHOICE_TAKE_PHOTO;
@@ -1981,6 +2006,148 @@ public class ConversationFragment extends XmppFragment
                     case CONTACT -> ATTACHMENT_CHOICE_CONTACT;
                 });
         setAttachmentChoicesVisibility(false);
+    }
+
+    private void showStickerPicker() {
+        final Context context = requireContext();
+        final List<StickerPack.Pack> packs = StickerPack.load(context);
+        if (packs.size() == 1) {
+            showStickerPack(packs.get(0));
+            return;
+        }
+        final String[] names = new String[packs.size()];
+        for (int i = 0; i < packs.size(); ++i) {
+            names[i] = packs.get(i).name();
+        }
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.choose_sticker_pack)
+                .setItems(names, (ignored, which) -> showStickerPack(packs.get(which)))
+                .setPositiveButton(
+                        R.string.import_sticker_pack,
+                        (ignored, which) -> showStickerPackImportDialog())
+                .setNeutralButton(
+                        R.string.choose_custom_sticker,
+                        (ignored, which) -> attachFile(ATTACHMENT_CHOICE_STICKER))
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private void showStickerPack(final StickerPack.Pack pack) {
+        final Context context = requireContext();
+        final GridLayout grid = new GridLayout(context);
+        grid.setColumnCount(3);
+        final int itemSize = Math.round(96 * getResources().getDisplayMetrics().density);
+        final int padding = Math.round(8 * getResources().getDisplayMetrics().density);
+        grid.setPadding(padding, padding, padding, padding);
+        for (final StickerPack.Item sticker : pack.items()) {
+            final ImageButton button = new ImageButton(context);
+            if (sticker.drawable() != 0) {
+                button.setImageResource(sticker.drawable());
+            } else {
+                button.setImageURI(Uri.fromFile(sticker.file()));
+            }
+            button.setContentDescription(sticker.name());
+            button.setBackgroundColor(android.graphics.Color.TRANSPARENT);
+            button.setPadding(padding, padding, padding, padding);
+            final GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+            params.width = itemSize;
+            params.height = itemSize;
+            button.setLayoutParams(params);
+            grid.addView(button);
+        }
+        final var dialog =
+                new MaterialAlertDialogBuilder(context)
+                        .setTitle(pack.name())
+                        .setView(grid)
+                        .setPositiveButton(
+                                R.string.import_sticker_pack,
+                                (ignored, which) -> showStickerPackImportDialog())
+                        .setNeutralButton(
+                                R.string.choose_custom_sticker,
+                                (ignored, which) -> attachFile(ATTACHMENT_CHOICE_STICKER))
+                        .setNegativeButton(R.string.cancel, null)
+                        .create();
+        for (int i = 0; i < grid.getChildCount(); ++i) {
+            final StickerPack.Item sticker = pack.items().get(i);
+            grid.getChildAt(i)
+                    .setOnClickListener(
+                            ignored -> {
+                                try {
+                                    final Uri uri = StickerPack.materialize(context, sticker);
+                                    final ArrayList<Attachment> selected = new ArrayList<>();
+                                    selected.add(
+                                            Attachment.ofSticker(
+                                                    context,
+                                                    uri,
+                                                    sticker.fallback(),
+                                                    StickerPack.STARTER_ID.equals(pack.id())
+                                                            ? null
+                                                            : pack.id()));
+                                    mediaPreviewAdapter.addMediaPreviews(selected);
+                                    dialog.dismiss();
+                                    commitAttachments();
+                                } catch (final IOException e) {
+                                    Log.e(Config.LOGTAG, "Could not prepare starter sticker", e);
+                                    Toast.makeText(
+                                                    context,
+                                                    R.string.error_file_not_found,
+                                                    Toast.LENGTH_LONG)
+                                            .show();
+                                }
+                            });
+        }
+        dialog.show();
+    }
+
+    private void showStickerPackImportDialog() {
+        final Context context = requireContext();
+        final EditText input = new EditText(context);
+        input.setSingleLine(true);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
+        input.setHint(R.string.sticker_pack_uri_hint);
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.import_sticker_pack)
+                .setMessage(R.string.import_sticker_pack_explanation)
+                .setView(input)
+                .setPositiveButton(
+                        R.string.import_sticker_pack,
+                        (ignored, which) -> importStickerPack(input.getText().toString().trim()))
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private void importStickerPack(final String uri) {
+        if (conversation == null || uri.isEmpty()) {
+            Toast.makeText(requireContext(), R.string.invalid_sticker_pack_uri, Toast.LENGTH_LONG)
+                    .show();
+            return;
+        }
+        final var future =
+                requireXmppActivity().xmppConnectionService.importStickerPack(conversation, uri);
+        Futures.addCallback(
+                future,
+                new FutureCallback<>() {
+                    @Override
+                    public void onSuccess(final StickerPack.Pack pack) {
+                        Toast.makeText(
+                                        requireContext(),
+                                        getString(R.string.sticker_pack_imported, pack.name()),
+                                        Toast.LENGTH_SHORT)
+                                .show();
+                        showStickerPack(pack);
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull final Throwable throwable) {
+                        Log.w(Config.LOGTAG, "Could not import sticker pack", throwable);
+                        Toast.makeText(
+                                        requireContext(),
+                                        R.string.could_not_import_sticker_pack,
+                                        Toast.LENGTH_LONG)
+                                .show();
+                    }
+                },
+                ContextCompat.getMainExecutor(requireContext()));
     }
 
     private void handleEncryptionSelection(MenuItem item) {

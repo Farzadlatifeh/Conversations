@@ -52,23 +52,35 @@ public final class Attachment implements Parcelable {
     private final Type type;
     private final UUID uuid;
     private final String mime;
+    private final String stickerFallback;
+    private final String stickerPackId;
 
     Attachment(final Parcel in) {
         this.uri = in.readParcelable(Uri.class.getClassLoader());
         this.mime = in.readString();
         this.uuid = UUID.fromString(in.readString());
         this.type = Type.valueOf(in.readString());
+        this.stickerFallback = in.readString();
+        this.stickerPackId = in.readString();
     }
 
-    private Attachment(final UUID uuid, final Uri uri, final Type type, final String mime) {
+    private Attachment(
+            final UUID uuid,
+            final Uri uri,
+            final Type type,
+            final String mime,
+            final String stickerFallback,
+            final String stickerPackId) {
         this.uri = uri;
         this.type = type;
         this.mime = mime;
         this.uuid = uuid;
+        this.stickerFallback = stickerFallback;
+        this.stickerPackId = stickerPackId;
     }
 
     private Attachment(final Uri uri, final Type type, final String mime) {
-        this(UUID.randomUUID(), uri, type, mime);
+        this(UUID.randomUUID(), uri, type, mime, null, null);
     }
 
     @Override
@@ -77,6 +89,8 @@ public final class Attachment implements Parcelable {
         dest.writeString(mime);
         dest.writeString(uuid.toString());
         dest.writeString(type.toString());
+        dest.writeString(stickerFallback);
+        dest.writeString(stickerPackId);
     }
 
     @Override
@@ -105,6 +119,14 @@ public final class Attachment implements Parcelable {
         return type;
     }
 
+    public String getStickerFallback() {
+        return stickerFallback;
+    }
+
+    public String getStickerPackId() {
+        return stickerPackId;
+    }
+
     @NonNull
     @Override
     public String toString() {
@@ -113,6 +135,8 @@ public final class Attachment implements Parcelable {
                 .add("type", type)
                 .add("uuid", uuid)
                 .add("mime", mime)
+                .add("stickerFallback", stickerFallback)
+                .add("stickerPackId", stickerPackId)
                 .toString();
     }
 
@@ -122,12 +146,14 @@ public final class Attachment implements Parcelable {
         return Objects.equal(uri, that.uri)
                 && type == that.type
                 && Objects.equal(uuid, that.uuid)
-                && Objects.equal(mime, that.mime);
+                && Objects.equal(mime, that.mime)
+                && Objects.equal(stickerFallback, that.stickerFallback)
+                && Objects.equal(stickerPackId, that.stickerPackId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(uri, type, uuid, mime);
+        return Objects.hashCode(uri, type, uuid, mime, stickerFallback, stickerPackId);
     }
 
     public enum Type {
@@ -153,23 +179,30 @@ public final class Attachment implements Parcelable {
         return Collections.singletonList(new Attachment(uri, type, mime));
     }
 
+    public static Attachment ofSticker(
+            final Context context, final Uri uri, final String fallback, final String packId) {
+        final String mime = MimeUtils.guessMimeTypeFromUriAndMime(context, uri, "image/png");
+        return new Attachment(UUID.randomUUID(), uri, Type.STICKER, mime, fallback, packId);
+    }
+
     public static Attachment of(final Message message) {
         final UUID uuid = UUID.fromString(message.getUuid());
         if (message.isGeoUri()) {
-            return new Attachment(uuid, Uri.EMPTY, Type.LOCATION, null);
+            return new Attachment(uuid, Uri.EMPTY, Type.LOCATION, null, null, null);
         }
         final String mime = message.getMimeType();
         if (MimeUtils.AMBIGUOUS_CONTAINER_FORMATS.contains(mime)) {
             final Message.FileParams fileParams = message.getFileParams();
             if (fileParams.width > 0 && fileParams.height > 0) {
-                return new Attachment(uuid, Uri.EMPTY, Type.FILE, "video/*");
+                return new Attachment(uuid, Uri.EMPTY, Type.FILE, "video/*", null, null);
             } else if (fileParams.runtime > 0) {
-                return new Attachment(uuid, Uri.EMPTY, Type.FILE, "audio/*");
+                return new Attachment(uuid, Uri.EMPTY, Type.FILE, "audio/*", null, null);
             } else {
-                return new Attachment(uuid, Uri.EMPTY, Type.FILE, "application/octet-stream");
+                return new Attachment(
+                        uuid, Uri.EMPTY, Type.FILE, "application/octet-stream", null, null);
             }
         }
-        return new Attachment(uuid, Uri.EMPTY, Type.FILE, mime);
+        return new Attachment(uuid, Uri.EMPTY, Type.FILE, mime, null, null);
     }
 
     public static List<Attachment> of(final Context context, List<Uri> uris, final String type) {
@@ -193,11 +226,14 @@ public final class Attachment implements Parcelable {
                 mime != null && (isImage(mime) || mime.startsWith("video/"))
                         ? Type.IMAGE
                         : Type.FILE,
-                mime);
+                mime,
+                null,
+                null);
     }
 
     public static List<Attachment> of(final Uri uri, final String mime) {
-        return Collections.singletonList(new Attachment(UUID.randomUUID(), uri, Type.FILE, mime));
+        return Collections.singletonList(
+                new Attachment(UUID.randomUUID(), uri, Type.FILE, mime, null, null));
     }
 
     public static List<Attachment> extractAttachments(

@@ -290,6 +290,7 @@ public class MessageParser extends AbstractParser
         final String oobUrl = oob != null ? oob.getURL() : null;
         final boolean sticker = packet.hasChild("sticker", Namespace.STICKERS);
         final String stickerFileParams = sticker ? getStickerFileParams(packet) : null;
+        final String bobStickerCid = sticker ? null : getXhtmlStickerCid(packet);
         final var replace = packet.getExtension(Replace.class);
         final var replacementId = replace == null ? null : replace.getId();
         final var axolotlEncrypted = packet.getOnlyExtension(Encrypted.class);
@@ -368,7 +369,8 @@ public class MessageParser extends AbstractParser
                 || pgpEncrypted != null
                 || (axolotlEncrypted != null && axolotlEncrypted.hasExtension(Payload.class))
                 || oobUrl != null
-                || stickerFileParams != null) {
+                || stickerFileParams != null
+                || bobStickerCid != null) {
             final boolean conversationIsProbablyMuc =
                     isTypeGroupChat
                             || mucUserElement != null
@@ -751,6 +753,9 @@ public class MessageParser extends AbstractParser
             }
 
             mXmppConnectionService.databaseBackend.createMessage(message);
+            if (bobStickerCid != null) {
+                mXmppConnectionService.fetchBobSticker(message, from, bobStickerCid);
+            }
             final HttpConnectionManager manager =
                     this.mXmppConnectionService.getHttpConnectionManager();
             final var autoAcceptFileSize =
@@ -943,8 +948,14 @@ public class MessageParser extends AbstractParser
             return url;
         }
         final String size = file.findChildContent("size");
-        final String width = file.findChildContent("width");
-        final String height = file.findChildContent("height");
+        String width = file.findChildContent("width");
+        String height = file.findChildContent("height");
+        final String dimensions = file.findChildContent("dimensions");
+        if (dimensions != null && dimensions.matches("[0-9]+x[0-9]+")) {
+            final String[] parts = dimensions.split("x", 2);
+            width = parts[0];
+            height = parts[1];
+        }
         if (width != null && height != null) {
             return url + '|' + (size == null ? "0" : size) + '|' + width + '|' + height;
         } else if (size != null) {
@@ -952,5 +963,27 @@ public class MessageParser extends AbstractParser
         } else {
             return url;
         }
+    }
+
+    /** Movim sends one XHTML-IM cid image and a fallback body instead of XEP-0449. */
+    private static String getXhtmlStickerCid(
+            final im.conversations.android.xmpp.model.stanza.Message packet) {
+        final Element html = packet.findChild("html", Namespace.XHTML_IM);
+        final Element body = html == null ? null : html.findChild("body", Namespace.XHTML);
+        if (body == null || body.getChildren().size() != 1) {
+            return null;
+        }
+        final Element paragraph = body.getChildren().get(0);
+        if (!"p".equals(paragraph.getName())
+                || !Namespace.XHTML.equals(paragraph.getNamespace())
+                || paragraph.getChildren().size() != 1) {
+            return null;
+        }
+        final Element image = paragraph.getChildren().get(0);
+        if (!"img".equals(image.getName()) || !Namespace.XHTML.equals(image.getNamespace())) {
+            return null;
+        }
+        final String source = image.getAttribute("src");
+        return source != null && source.startsWith("cid:") ? source.substring(4) : null;
     }
 }

@@ -12,6 +12,7 @@ import eu.siacs.conversations.xml.Element;
 import eu.siacs.conversations.xml.Namespace;
 import eu.siacs.conversations.xmpp.XmppConnection;
 import eu.siacs.conversations.xmpp.manager.BlockingManager;
+import eu.siacs.conversations.xmpp.manager.BobManager;
 import eu.siacs.conversations.xmpp.manager.DiscoManager;
 import eu.siacs.conversations.xmpp.manager.EntityTimeManager;
 import eu.siacs.conversations.xmpp.manager.JingleManager;
@@ -358,6 +359,8 @@ public class IqParser extends AbstractParser implements Consumer<Iq> {
             this.getManager(DiscoManager.class).handleVersionRequest(packet);
         } else if (packet.hasExtension(Time.class)) {
             this.getManager(EntityTimeManager.class).request(packet);
+        } else if (packet.hasExtension(im.conversations.android.xmpp.model.bob.Data.class)) {
+            this.getManager(BobManager.class).handleRequest(packet);
         } else {
             this.connection.sendErrorFor(packet, new Condition.FeatureNotImplemented());
         }

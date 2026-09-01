@@ -4,6 +4,8 @@ public final class Namespace {
     public static final String ADDRESSING = "http://jabber.org/protocol/address";
     public static final String AXOLOTL = "eu.siacs.conversations.axolotl";
     public static final String BOB = "urn:xmpp:bob";
+    public static final String XHTML_IM = "http://jabber.org/protocol/xhtml-im";
+    public static final String XHTML = "http://www.w3.org/1999/xhtml";
     public static final String PGP_SIGNED = "jabber:x:signed";
     public static final String PGP_ENCRYPTED = "jabber:x:encrypted";
     public static final String AXOLOTL_BUNDLES = AXOLOTL + ".bundles";
