@@ -25,6 +25,7 @@ import eu.siacs.conversations.xmpp.Jid;
 import eu.siacs.conversations.xmpp.XmppConnection;
 import eu.siacs.conversations.xmpp.jingle.JingleRtpConnection;
 import eu.siacs.conversations.xmpp.manager.ActivityManager;
+import eu.siacs.conversations.xmpp.manager.BobManager;
 import eu.siacs.conversations.xmpp.manager.ChatStateManager;
 import eu.siacs.conversations.xmpp.manager.DeliveryReceiptManager;
 import eu.siacs.conversations.xmpp.manager.DisplayedManager;
@@ -965,25 +966,42 @@ public class MessageParser extends AbstractParser
         }
     }
 
-    /** Movim sends one XHTML-IM cid image and a fallback body instead of XEP-0449. */
-    private static String getXhtmlStickerCid(
+    /**
+     * Movim sends a fallback body plus an XHTML-IM image whose source is served through XEP-0231.
+     * Its DOM builder imports the p/img subtree below the XHTML body, so child namespace metadata
+     * is not consistent across XML parsers. Anchor recognition on the namespaced body, Movim's
+     * explicit Sticker alt text, and a syntactically valid BoB CID.
+     */
+    static String getXhtmlStickerCid(
             final im.conversations.android.xmpp.model.stanza.Message packet) {
         final Element html = packet.findChild("html", Namespace.XHTML_IM);
         final Element body = html == null ? null : html.findChild("body", Namespace.XHTML);
-        if (body == null || body.getChildren().size() != 1) {
-            return null;
-        }
-        final Element paragraph = body.getChildren().get(0);
-        if (!"p".equals(paragraph.getName())
-                || !Namespace.XHTML.equals(paragraph.getNamespace())
-                || paragraph.getChildren().size() != 1) {
-            return null;
-        }
-        final Element image = paragraph.getChildren().get(0);
-        if (!"img".equals(image.getName()) || !Namespace.XHTML.equals(image.getNamespace())) {
+        final Element image = findMovimStickerImage(body);
+        if (image == null || !"Sticker".equalsIgnoreCase(image.getAttribute("alt"))) {
             return null;
         }
         final String source = image.getAttribute("src");
-        return source != null && source.startsWith("cid:") ? source.substring(4) : null;
+        if (source == null || !source.regionMatches(true, 0, "cid:", 0, 4)) {
+            return null;
+        }
+        final String cid = source.substring(4);
+        return BobManager.parseCidAlgorithm(cid) == null ? null : cid;
+    }
+
+    private static Element findMovimStickerImage(final Element parent) {
+        if (parent == null) {
+            return null;
+        }
+        for (final Element child : parent.getChildren()) {
+            if ("img".equals(child.getName())
+                    && "Sticker".equalsIgnoreCase(child.getAttribute("alt"))) {
+                return child;
+            }
+            final Element nested = findMovimStickerImage(child);
+            if (nested != null) {
+                return nested;
+            }
+        }
+        return null;
     }
 }

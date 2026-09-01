@@ -66,7 +66,7 @@
                 app:textColor="?colorOnTertiaryContainer"
                 tools:ignore="RtlCompat" />
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/message_input_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,26 +75,30 @@
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="6dp">
 
-                <RelativeLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/input_layout"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@+id/textSendButton"
                     android:background="@drawable/background_message_bubble"
                     android:backgroundTint="?colorTertiaryContainer"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="4dp">
+                    android:minHeight="48dp"
+                    android:paddingHorizontal="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/textSendButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:id="@+id/message_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginVertical="8sp"
                         android:layout_marginHorizontal="12dp"
-                        android:layout_toStartOf="@+id/sticker_button">
+                        android:layout_marginVertical="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/sticker_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:id="@+id/text_input_hint"
@@ -105,33 +109,23 @@
                             android:textAppearance="?textAppearanceBodySmall"
                             android:textColor="?colorOnTertiaryContainer"
                             android:visibility="visible"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
                             tools:text="@string/private_message_to" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/media_preview"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:requiresFadingEdge="horizontal"
                             android:visibility="gone"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/text_input_hint"
-                            tools:listitem="@layout/item_media_preview">
-
-                        </androidx.recyclerview.widget.RecyclerView>
+                            tools:listitem="@layout/item_media_preview" />
 
                         <eu.siacs.conversations.ui.widget.EditMessage
-
                             android:id="@+id/text_input"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
-                            android:ems="10"
                             android:imeOptions="flagNoExtractUi|actionSend"
                             android:inputType="textShortMessage|textMultiLine|textCapSentences"
                             android:maxLines="8"
@@ -139,59 +133,58 @@
                             android:minLines="1"
                             android:textColor="?colorOnTertiaryContainer"
                             android:textColorHint="@color/hint_on_tertiary_container"
-                            android:textCursorDrawable="@drawable/cursor_on_tertiary_container"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/media_preview">
+                            android:textCursorDrawable="@drawable/cursor_on_tertiary_container">
 
                             <requestFocus />
                         </eu.siacs.conversations.ui.widget.EditMessage>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/sticker_button"
                         style="?attr/materialIconButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toStartOf="@+id/attach_button"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:contentDescription="@string/open_sticker_picker"
                         app:icon="@drawable/ic_sticker_24dp"
                         app:iconSize="24dp"
-                        app:iconTint="?colorOnTertiaryContainer" />
+                        app:iconTint="?colorOnTertiaryContainer"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/attach_button"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/attach_button"
                         style="?attr/materialIconButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:checkable="true"
                         android:checked="false"
+                        android:contentDescription="@string/attach_file"
                         app:icon="@drawable/ic_attach_file_24dp"
                         app:iconSize="24dp"
-                        app:iconTint="?colorOnTertiaryContainer" />
+                        app:iconTint="?colorOnTertiaryContainer"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-
-                </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/textSendButton"
                     style="?attr/materialIconButtonFilledTonalStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:layout_marginStart="8dp"
                     android:backgroundTint="?colorSurfaceContainerHigh"
                     android:contentDescription="@string/send_message"
                     app:icon="@drawable/ic_send_24dp"
-                    app:iconSize="32dp" />
-            </RelativeLayout>
+                    app:iconSize="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <RelativeLayout
                 android:id="@+id/snackbar"
                 android:layout_width="fill_parent"
