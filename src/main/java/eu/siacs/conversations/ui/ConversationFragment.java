@@ -2072,7 +2072,7 @@ public class ConversationFragment extends XmppFragment
                                         getString(R.string.sticker_pack_imported, pack.name()),
                                         Toast.LENGTH_SHORT)
                                 .show();
-                        showStickerPack(pack);
+                        showStickerPicker();
                     }
 
                     @Override
