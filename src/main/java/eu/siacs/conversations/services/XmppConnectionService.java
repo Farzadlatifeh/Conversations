@@ -48,6 +48,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
+import com.google.common.io.Files;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -117,6 +118,7 @@ import eu.siacs.conversations.xmpp.mam.MamReference;
 import eu.siacs.conversations.xmpp.manager.ActivityManager;
 import eu.siacs.conversations.xmpp.manager.AvatarManager;
 import eu.siacs.conversations.xmpp.manager.BlockingManager;
+import eu.siacs.conversations.xmpp.manager.BobManager;
 import eu.siacs.conversations.xmpp.manager.BookmarkManager;
 import eu.siacs.conversations.xmpp.manager.ChatStateManager;
 import eu.siacs.conversations.xmpp.manager.ClientStateIndicationManager;
@@ -130,6 +132,7 @@ import eu.siacs.conversations.xmpp.manager.PresenceManager;
 import eu.siacs.conversations.xmpp.manager.PushNotificationManager;
 import eu.siacs.conversations.xmpp.manager.RegistrationManager;
 import eu.siacs.conversations.xmpp.manager.RosterManager;
+import eu.siacs.conversations.xmpp.manager.StickerPackManager;
 import eu.siacs.conversations.xmpp.manager.VCardManager;
 import im.conversations.android.model.Bookmark;
 import im.conversations.android.model.ImmutableBookmark;
@@ -137,6 +140,7 @@ import im.conversations.android.xmpp.model.delay.Delay;
 import im.conversations.android.xmpp.model.stanza.Iq;
 import im.conversations.android.xmpp.model.up.Push;
 import java.io.File;
+import java.io.IOException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.time.Instant;
@@ -435,6 +439,15 @@ public class XmppConnectionService extends Service {
      */
     public ListenableFuture<Void> attachStickerToConversation(
             final Conversation conversation, final Uri uri, final String type) {
+        return attachStickerToConversation(conversation, uri, type, "Sticker", null);
+    }
+
+    public ListenableFuture<Void> attachStickerToConversation(
+            final Conversation conversation,
+            final Uri uri,
+            final String type,
+            final String fallback,
+            final String packId) {
         final String mimeType = MimeUtils.guessMimeTypeFromUriAndMime(this, uri, type);
         if (mimeType == null || !mimeType.startsWith("image/")) {
             return Futures.immediateFailedFuture(
@@ -452,9 +465,86 @@ public class XmppConnectionService extends Service {
             message.setCounterpart(conversation.getNextCounterpart());
             message.setType(Message.TYPE_STICKER);
         }
+        message.setStickerFallback(fallback);
+        message.setStickerPackId(packId);
         final var future = submitAttachToConversation(uri, mimeType, message);
         return Futures.transformAsync(
                 future, v -> encryptIfNeededAndSend(message), MoreExecutors.directExecutor());
+    }
+
+    public String registerBobSticker(final Message message) throws IOException {
+        final var connection = message.getConversation().getAccount().getXmppConnection();
+        if (connection == null) {
+            throw new IOException("Account is not connected");
+        }
+        return connection
+                .getManager(BobManager.class)
+                .register(fileBackend.getFile(message), message.getMimeType());
+    }
+
+    public ListenableFuture<eu.siacs.conversations.ui.stickers.StickerPack.Pack> importStickerPack(
+            final Conversation conversation, final String uri) {
+        final var connection = conversation.getAccount().getXmppConnection();
+        if (connection == null) {
+            return Futures.immediateFailedFuture(
+                    new IllegalStateException("Account is not connected"));
+        }
+        return connection.getManager(StickerPackManager.class).importPack(uri);
+    }
+
+    /** Fetches a Movim XHTML-IM sticker through XEP-0231 and turns the fallback into an image. */
+    public void fetchBobSticker(final Message message, final Jid from, final String cid) {
+        final var connection = message.getConversation().getAccount().getXmppConnection();
+        if (connection == null) {
+            return;
+        }
+        final var future = connection.getManager(BobManager.class).fetch(from, cid);
+        Futures.addCallback(
+                future,
+                new FutureCallback<>() {
+                    @Override
+                    public void onSuccess(final BobManager.Content content) {
+                        FILE_ATTACHMENT_EXECUTOR.execute(
+                                () -> {
+                                    try {
+                                        final String extension =
+                                                Strings.nullToEmpty(
+                                                        MimeUtils.guessExtensionFromMimeType(
+                                                                content.mimeType()));
+                                        final String filename =
+                                                extension.isEmpty()
+                                                        ? message.getUuid()
+                                                        : message.getUuid() + '.' + extension;
+                                        fileBackend.setupRelativeFilePath(
+                                                message, filename, content.mimeType());
+                                        final File file = fileBackend.getFile(message);
+                                        final File parent = file.getParentFile();
+                                        if (parent != null
+                                                && !parent.exists()
+                                                && !parent.mkdirs()) {
+                                            throw new IOException(
+                                                    "Could not create sticker directory");
+                                        }
+                                        Files.write(content.bytes(), file);
+                                        message.setType(
+                                                message.isPrivateMessage()
+                                                        ? Message.TYPE_PRIVATE_STICKER
+                                                        : Message.TYPE_STICKER);
+                                        fileBackend.updateFileParams(message);
+                                        updateMessage(message);
+                                        updateConversationUi();
+                                    } catch (final IOException e) {
+                                        Log.w(Config.LOGTAG, "Could not save BoB sticker", e);
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull final Throwable throwable) {
+                        Log.w(Config.LOGTAG, "Could not retrieve BoB sticker " + cid, throwable);
+                    }
+                },
+                MoreExecutors.directExecutor());
     }
 
     public Conversation find(Bookmark bookmark) {

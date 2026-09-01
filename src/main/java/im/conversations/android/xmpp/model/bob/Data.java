@@ -21,6 +21,18 @@ public class Data extends Extension implements ByteContent {
         return this.getAttribute("type");
     }
 
+    public void setCid(final String cid) {
+        this.setAttribute("cid", cid);
+    }
+
+    public void setType(final String type) {
+        this.setAttribute("type", type);
+    }
+
+    public void setMaxAge(final int seconds) {
+        this.setAttribute("max-age", Integer.toString(seconds));
+    }
+
     public static Optional<Data> get(final Extension stanza, final String cid) {
         return Iterables.tryFind(stanza.getExtensions(Data.class), d -> cid.equals(d.getCid()));
     }

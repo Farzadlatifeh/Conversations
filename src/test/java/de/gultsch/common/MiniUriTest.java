@@ -244,6 +244,6 @@ public class MiniUriTest {
     public void geoUriWithLabel() {
         final var uri = new MiniUri.Geo(123.45, -67.89);
         Assert.assertEquals(
-                "geo:123.45,-67.89?q=123.45,-67.89(Here)", uri.asUniveralsUri("Here").toString());
+                "geo:123.45,-67.89?q=123.45,-67.89(Here)", uri.asUniversalUri("Here").toString());
     }
 }

@@ -130,6 +130,8 @@ public class Message extends AbstractEntity
     private Boolean isEmojisOnly = null;
     private Boolean treatAsDownloadable = null;
     private FileParams fileParams = null;
+    private String stickerFallback = "Sticker";
+    private String stickerPackId;
     private List<MucOptions.User> counterparts;
 
     protected Message(final Conversational conversation) {
@@ -913,6 +915,24 @@ public class Message extends AbstractEntity
 
     public boolean isSticker() {
         return type == TYPE_STICKER || type == TYPE_PRIVATE_STICKER;
+    }
+
+    public String getStickerFallback() {
+        return stickerFallback;
+    }
+
+    public void setStickerFallback(final String stickerFallback) {
+        if (stickerFallback != null && !stickerFallback.isBlank()) {
+            this.stickerFallback = stickerFallback;
+        }
+    }
+
+    public String getStickerPackId() {
+        return stickerPackId;
+    }
+
+    public void setStickerPackId(final String stickerPackId) {
+        this.stickerPackId = stickerPackId;
     }
 
     public boolean isTypeText() {

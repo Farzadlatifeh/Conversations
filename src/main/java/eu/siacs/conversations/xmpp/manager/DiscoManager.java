@@ -71,6 +71,7 @@ public class DiscoManager extends AbstractManager {
                     Namespace.VERSION,
                     Namespace.CHAT_STATES,
                     Namespace.REACTIONS,
+                    Namespace.BOB,
                     Namespace.STICKERS);
     private final List<String> MESSAGE_CONFIRMATION_FEATURES =
             Arrays.asList(Namespace.CHAT_MARKERS, Namespace.DELIVERY_RECEIPTS);

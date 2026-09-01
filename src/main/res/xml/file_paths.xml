@@ -6,6 +6,9 @@
     <files-path
         name="attachments"
         path="attachments/" />
+    <files-path
+        name="sticker_packs"
+        path="sticker-packs/" />
 
     <!-- When we call the camera app to take a picture it will be stored in this directory.
     Upon sending the picture it will be copied over to internal or external storage -->
@@ -18,4 +21,7 @@
     <cache-path
         name="recordings"
         path="Recordings" />
+    <cache-path
+        name="sticker_pack_cache"
+        path="sticker-packs/" />
 </paths>

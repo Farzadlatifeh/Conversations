@@ -1,5 +1,9 @@
 package eu.siacs.conversations.generator;
 
+import android.util.Log;
+import com.google.common.io.BaseEncoding;
+import com.google.common.io.Files;
+import eu.siacs.conversations.Config;
 import eu.siacs.conversations.crypto.axolotl.AxolotlService;
 import eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage;
 import eu.siacs.conversations.entities.Account;
@@ -14,6 +18,9 @@ import im.conversations.android.xmpp.model.correction.Replace;
 import im.conversations.android.xmpp.model.hints.Store;
 import im.conversations.android.xmpp.model.markers.Markable;
 import im.conversations.android.xmpp.model.unique.OriginId;
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MessageGenerator extends AbstractGenerator {
     private static final String OMEMO_FALLBACK_MESSAGE =
@@ -99,6 +106,10 @@ public class MessageGenerator extends AbstractGenerator {
             content = fileParams.url;
             packet.addChild("x", Namespace.OOB).addChild("url").setContent(content);
             addStickerPayload(packet, message);
+            if (message.isSticker()) {
+                content = message.getStickerFallback();
+                addMovimStickerCompatibility(packet, message);
+            }
         } else {
             content = message.getBody();
         }
@@ -131,11 +142,14 @@ public class MessageGenerator extends AbstractGenerator {
             final im.conversations.android.xmpp.model.stanza.Message packet,
             final Message message) {
         if (message.isSticker()) {
-            packet.addChild("sticker", Namespace.STICKERS);
+            final Element sticker = packet.addChild("sticker", Namespace.STICKERS);
+            if (message.getStickerPackId() != null) {
+                sticker.setAttribute("pack", message.getStickerPackId());
+            }
         }
     }
 
-    private static void addStickerPayload(
+    private void addStickerPayload(
             final im.conversations.android.xmpp.model.stanza.Message packet,
             final Message message) {
         if (!message.isSticker()) {
@@ -158,8 +172,18 @@ public class MessageGenerator extends AbstractGenerator {
             file.addChild("size").setContent(Long.toString(params.size));
         }
         if (params.width > 0 && params.height > 0) {
-            file.addChild("width").setContent(Integer.toString(params.width));
-            file.addChild("height").setContent(Integer.toString(params.height));
+            file.addChild("dimensions").setContent(params.width + "x" + params.height);
+        }
+        file.addChild("desc").setContent(message.getStickerFallback());
+        try {
+            final byte[] bytes =
+                    Files.toByteArray(mXmppConnectionService.getFileBackend().getFile(message));
+            final byte[] digest = MessageDigest.getInstance("SHA-256").digest(bytes);
+            file.addChild("hash", Namespace.HASHES)
+                    .setAttribute("algo", "sha-256")
+                    .setContent(BaseEncoding.base64().encode(digest));
+        } catch (final IOException | NoSuchAlgorithmException e) {
+            Log.w(Config.LOGTAG, "Could not calculate sticker hash", e);
         }
         sharing.addChild("sources")
                 .addChild("url-data", Namespace.URL_DATA)
@@ -167,5 +191,24 @@ public class MessageGenerator extends AbstractGenerator {
         packet.addChild("fallback", Namespace.FALLBACK_INDICATION)
                 .setAttribute("for", Namespace.STATELESS_FILE_SHARING)
                 .addChild("body");
+    }
+
+    private void addMovimStickerCompatibility(
+            final im.conversations.android.xmpp.model.stanza.Message packet,
+            final Message message) {
+        if (message.getEncryption() != Message.ENCRYPTION_NONE) {
+            return;
+        }
+        try {
+            final String cid = mXmppConnectionService.registerBobSticker(message);
+            final Element html = packet.addChild("html", Namespace.XHTML_IM);
+            final Element paragraph = html.addChild("body", Namespace.XHTML).addChild("p");
+            paragraph
+                    .addChild("img")
+                    .setAttribute("src", "cid:" + cid)
+                    .setAttribute("alt", message.getStickerFallback());
+        } catch (final IOException e) {
+            Log.w(Config.LOGTAG, "Could not register Movim-compatible sticker", e);
+        }
     }
 }
