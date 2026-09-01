@@ -29,7 +29,10 @@ import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -1177,7 +1180,14 @@ public class ConversationFragment extends XmppFragment
             this.binding.textInput.setHint(R.string.you_are_not_participating);
         } else {
             this.binding.textInputHint.setVisibility(View.GONE);
-            this.binding.textInput.setHint(UIHelper.getMessageHint(requireContext(), conversation));
+            final SpannableString hint =
+                    new SpannableString(UIHelper.getMessageHint(requireContext(), conversation));
+            hint.setSpan(
+                    new RelativeSizeSpan(0.75f),
+                    0,
+                    hint.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            this.binding.textInput.setHint(hint);
         }
     }
 
