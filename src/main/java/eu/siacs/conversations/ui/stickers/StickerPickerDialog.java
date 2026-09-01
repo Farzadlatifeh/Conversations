@@ -108,8 +108,8 @@ public final class StickerPickerDialog {
             final Listener listener,
             final Runnable dismiss) {
         grid.removeAllViews();
-        final int itemSize = dp(context, 80);
-        final int padding = dp(context, 6);
+        final int itemSize = dp(context, 72);
+        final int padding = dp(context, 4);
         for (final StickerPack.Item sticker : pack.items()) {
             final View button;
             if (sticker.emoji() != null) {
@@ -138,8 +138,10 @@ public final class StickerPickerDialog {
                         dismiss.run();
                     });
             final GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.width = itemSize;
+            params.width = 0;
             params.height = itemSize;
+            params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+            params.setGravity(Gravity.FILL_HORIZONTAL);
             params.setMargins(padding, padding, padding, padding);
             grid.addView(button, params);
         }

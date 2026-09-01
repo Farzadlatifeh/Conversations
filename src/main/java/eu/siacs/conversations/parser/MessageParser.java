@@ -969,14 +969,12 @@ public class MessageParser extends AbstractParser
     /**
      * Movim sends a fallback body plus an XHTML-IM image whose source is served through XEP-0231.
      * Its DOM builder imports the p/img subtree below the XHTML body, so child namespace metadata
-     * is not consistent across XML parsers. Anchor recognition on the namespaced body, Movim's
-     * explicit Sticker alt text, and a syntactically valid BoB CID.
+     * is not consistent across XML parsers. Anchor recognition on Movim's explicit Sticker alt text
+     * and a syntactically valid BoB CID; bound the recursive walk to hostile-stanza-safe limits.
      */
     static String getXhtmlStickerCid(
             final im.conversations.android.xmpp.model.stanza.Message packet) {
-        final Element html = packet.findChild("html", Namespace.XHTML_IM);
-        final Element body = html == null ? null : html.findChild("body", Namespace.XHTML);
-        final Element image = findMovimStickerImage(body);
+        final Element image = findMovimStickerImage(packet, 0, new int[] {0});
         if (image == null || !"Sticker".equalsIgnoreCase(image.getAttribute("alt"))) {
             return null;
         }
@@ -988,8 +986,9 @@ public class MessageParser extends AbstractParser
         return BobManager.parseCidAlgorithm(cid) == null ? null : cid;
     }
 
-    private static Element findMovimStickerImage(final Element parent) {
-        if (parent == null) {
+    private static Element findMovimStickerImage(
+            final Element parent, final int depth, final int[] visited) {
+        if (parent == null || depth > 8 || visited[0]++ >= 128) {
             return null;
         }
         for (final Element child : parent.getChildren()) {
@@ -997,7 +996,7 @@ public class MessageParser extends AbstractParser
                     && "Sticker".equalsIgnoreCase(child.getAttribute("alt"))) {
                 return child;
             }
-            final Element nested = findMovimStickerImage(child);
+            final Element nested = findMovimStickerImage(child, depth + 1, visited);
             if (nested != null) {
                 return nested;
             }
