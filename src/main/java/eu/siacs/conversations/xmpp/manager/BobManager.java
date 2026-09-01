@@ -122,7 +122,7 @@ public final class BobManager extends AbstractManager {
         }
     }
 
-    static String parseCidAlgorithm(final String cid) {
+    public static String parseCidAlgorithm(final String cid) {
         if (cid == null) {
             return null;
         }
