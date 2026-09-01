@@ -969,8 +969,8 @@ public class MessageParser extends AbstractParser
     /**
      * Movim sends a fallback body plus an XHTML-IM image whose source is served through XEP-0231.
      * Its DOM builder imports the p/img subtree below the XHTML body, so child namespace metadata
-     * is not consistent across XML parsers. Anchor recognition on the namespaced body, Movim's
-     * explicit Sticker alt text, and a syntactically valid BoB CID.
+     * is not consistent across XML parsers. Anchor recognition on Movim's explicit Sticker alt text
+     * and a syntactically valid BoB CID; bound the recursive walk to hostile-stanza-safe limits.
      */
     static String getXhtmlStickerCid(
             final im.conversations.android.xmpp.model.stanza.Message packet) {
