@@ -50,8 +50,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.GridLayout;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -117,6 +115,7 @@ import eu.siacs.conversations.services.XmppConnectionService;
 import eu.siacs.conversations.ui.adapter.MediaPreviewAdapter;
 import eu.siacs.conversations.ui.adapter.MessageAdapter;
 import eu.siacs.conversations.ui.stickers.StickerPack;
+import eu.siacs.conversations.ui.stickers.StickerPickerDialog;
 import eu.siacs.conversations.ui.util.ActivityResult;
 import eu.siacs.conversations.ui.util.Attachment;
 import eu.siacs.conversations.ui.util.ConversationMenuConfigurator;
@@ -2000,93 +1999,42 @@ public class ConversationFragment extends XmppFragment
 
     private void showStickerPicker() {
         final Context context = requireContext();
-        final List<StickerPack.Pack> packs = StickerPack.load(context);
-        if (packs.size() == 1) {
-            showStickerPack(packs.get(0));
-            return;
-        }
-        final String[] names = new String[packs.size()];
-        for (int i = 0; i < packs.size(); ++i) {
-            names[i] = packs.get(i).name();
-        }
-        new MaterialAlertDialogBuilder(context)
-                .setTitle(R.string.choose_sticker_pack)
-                .setItems(names, (ignored, which) -> showStickerPack(packs.get(which)))
-                .setPositiveButton(
-                        R.string.import_sticker_pack,
-                        (ignored, which) -> showStickerPackImportDialog())
-                .setNeutralButton(
-                        R.string.choose_custom_sticker,
-                        (ignored, which) -> attachFile(ATTACHMENT_CHOICE_STICKER))
-                .setNegativeButton(R.string.cancel, null)
-                .show();
+        StickerPickerDialog.show(
+                context,
+                StickerPack.load(context),
+                new StickerPickerDialog.Listener() {
+                    @Override
+                    public void onStickerSelected(
+                            final StickerPack.Pack pack, final StickerPack.Item sticker) {
+                        sendStickerFromPicker(context, pack, sticker);
+                    }
+
+                    @Override
+                    public void onImportPackRequested() {
+                        showStickerPackImportDialog();
+                    }
+                });
     }
 
-    private void showStickerPack(final StickerPack.Pack pack) {
-        final Context context = requireContext();
-        final GridLayout grid = new GridLayout(context);
-        grid.setColumnCount(3);
-        final int itemSize = Math.round(96 * getResources().getDisplayMetrics().density);
-        final int padding = Math.round(8 * getResources().getDisplayMetrics().density);
-        grid.setPadding(padding, padding, padding, padding);
-        for (final StickerPack.Item sticker : pack.items()) {
-            final ImageButton button = new ImageButton(context);
-            if (sticker.drawable() != 0) {
-                button.setImageResource(sticker.drawable());
-            } else {
-                button.setImageURI(Uri.fromFile(sticker.file()));
-            }
-            button.setContentDescription(sticker.name());
-            button.setBackgroundColor(android.graphics.Color.TRANSPARENT);
-            button.setPadding(padding, padding, padding, padding);
-            final GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.width = itemSize;
-            params.height = itemSize;
-            button.setLayoutParams(params);
-            grid.addView(button);
+    private void sendStickerFromPicker(
+            final Context context,
+            final StickerPack.Pack pack,
+            final StickerPack.Item sticker) {
+        try {
+            final Uri uri = StickerPack.materialize(context, sticker);
+            final ArrayList<Attachment> selected = new ArrayList<>();
+            selected.add(
+                    Attachment.ofSticker(
+                            context,
+                            uri,
+                            sticker.fallback(),
+                            StickerPack.STARTER_ID.equals(pack.id()) ? null : pack.id()));
+            mediaPreviewAdapter.addMediaPreviews(selected);
+            commitAttachments();
+        } catch (final IOException e) {
+            Log.e(Config.LOGTAG, "Could not prepare sticker", e);
+            Toast.makeText(context, R.string.error_file_not_found, Toast.LENGTH_LONG).show();
         }
-        final var dialog =
-                new MaterialAlertDialogBuilder(context)
-                        .setTitle(pack.name())
-                        .setView(grid)
-                        .setPositiveButton(
-                                R.string.import_sticker_pack,
-                                (ignored, which) -> showStickerPackImportDialog())
-                        .setNeutralButton(
-                                R.string.choose_custom_sticker,
-                                (ignored, which) -> attachFile(ATTACHMENT_CHOICE_STICKER))
-                        .setNegativeButton(R.string.cancel, null)
-                        .create();
-        for (int i = 0; i < grid.getChildCount(); ++i) {
-            final StickerPack.Item sticker = pack.items().get(i);
-            grid.getChildAt(i)
-                    .setOnClickListener(
-                            ignored -> {
-                                try {
-                                    final Uri uri = StickerPack.materialize(context, sticker);
-                                    final ArrayList<Attachment> selected = new ArrayList<>();
-                                    selected.add(
-                                            Attachment.ofSticker(
-                                                    context,
-                                                    uri,
-                                                    sticker.fallback(),
-                                                    StickerPack.STARTER_ID.equals(pack.id())
-                                                            ? null
-                                                            : pack.id()));
-                                    mediaPreviewAdapter.addMediaPreviews(selected);
-                                    dialog.dismiss();
-                                    commitAttachments();
-                                } catch (final IOException e) {
-                                    Log.e(Config.LOGTAG, "Could not prepare starter sticker", e);
-                                    Toast.makeText(
-                                                    context,
-                                                    R.string.error_file_not_found,
-                                                    Toast.LENGTH_LONG)
-                                            .show();
-                                }
-                            });
-        }
-        dialog.show();
     }
 
     private void showStickerPackImportDialog() {
