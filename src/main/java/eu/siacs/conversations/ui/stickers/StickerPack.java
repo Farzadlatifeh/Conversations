@@ -3,9 +3,13 @@ package eu.siacs.conversations.ui.stickers;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.TextView;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.content.res.AppCompatResources;
 import com.google.common.base.Strings;
@@ -35,7 +39,7 @@ public final class StickerPack {
     private static final int MAX_PACKS = 50;
     private static final int MAX_ITEMS = 100;
 
-    public static final String STARTER_ID = "open-starter-v1";
+    public static final String STARTER_ID = "open-starter-v2";
 
     private StickerPack() {}
 
@@ -188,12 +192,16 @@ public final class StickerPack {
             final Bitmap bitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_8888);
             final Canvas canvas = new Canvas(bitmap);
             if (item.emoji() != null) {
-                final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                paint.setTextAlign(Paint.Align.CENTER);
-                paint.setTextSize(340f);
-                final Paint.FontMetrics metrics = paint.getFontMetrics();
-                final float baseline = 256f - (metrics.ascent + metrics.descent) / 2f;
-                canvas.drawText(item.emoji(), 256f, baseline, paint);
+                final TextView emoji = new TextView(context);
+                emoji.setText(item.emoji());
+                emoji.setTextColor(Color.BLACK);
+                emoji.setTextSize(TypedValue.COMPLEX_UNIT_PX, 300f);
+                emoji.setGravity(Gravity.CENTER);
+                emoji.setIncludeFontPadding(false);
+                final int exact = View.MeasureSpec.makeMeasureSpec(512, View.MeasureSpec.EXACTLY);
+                emoji.measure(exact, exact);
+                emoji.layout(0, 0, 512, 512);
+                emoji.draw(canvas);
             } else {
                 final Drawable drawable =
                         AppCompatResources.getDrawable(context, item.drawable());
