@@ -23,6 +23,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MessageGenerator extends AbstractGenerator {
+    private static final String MOVIM_STICKER_FALLBACK =
+            "A sticker has been sent using Movim";
     private static final String OMEMO_FALLBACK_MESSAGE =
             "I sent you an OMEMO encrypted message but your client doesn’t seem to support that."
                     + " Find more information on https://conversations.im/omemo";
@@ -103,18 +105,55 @@ public class MessageGenerator extends AbstractGenerator {
         String content;
         if (message.hasFileOnRemoteHost()) {
             final Message.FileParams fileParams = message.getFileParams();
-            content = fileParams.url;
-            packet.addChild("x", Namespace.OOB).addChild("url").setContent(content);
-            addStickerPayload(packet, message);
-            if (message.isSticker()) {
-                content = message.getStickerFallback();
+            final boolean movimSticker = message.isSticker() && prefersMovimSticker(message);
+            if (movimSticker) {
+                content = MOVIM_STICKER_FALLBACK;
                 addMovimStickerCompatibility(packet, message);
+            } else {
+                content = fileParams.url;
+                packet.addChild("x", Namespace.OOB).addChild("url").setContent(content);
+                addStickerPayload(packet, message);
+                if (message.isSticker()) {
+                    content = message.getStickerFallback();
+                    addMovimStickerCompatibility(packet, message);
+                }
             }
         } else {
             content = message.getBody();
         }
         packet.setBody(content);
         return packet;
+    }
+
+    private static boolean prefersMovimSticker(final Message message) {
+        if (message.getConversation().getMode() != Conversation.MODE_SINGLE) {
+            return false;
+        }
+        final var contact = message.getContact();
+        if (contact == null) {
+            return false;
+        }
+        for (final var capability : contact.getCapabilities()) {
+            if (!capability.isPresent()) {
+                continue;
+            }
+            final var info = capability.get();
+            boolean movimIdentity = false;
+            for (final var identity : info.getIdentities()) {
+                final String name = identity.getIdentityName();
+                if (name != null && name.toLowerCase(java.util.Locale.ROOT).contains("movim")) {
+                    movimIdentity = true;
+                    break;
+                }
+            }
+            if (movimIdentity
+                    || (!info.hasFeature(Namespace.STICKERS)
+                            && info.hasFeature(Namespace.BOB)
+                            && info.hasFeature(Namespace.XHTML_IM))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public im.conversations.android.xmpp.model.stanza.Message generatePgpChat(Message message) {

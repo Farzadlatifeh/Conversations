@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import com.google.android.material.button.MaterialButton;
@@ -112,25 +111,16 @@ public final class StickerPickerDialog {
         final int padding = dp(context, 4);
         for (final StickerPack.Item sticker : pack.items()) {
             final View button;
-            if (sticker.emoji() != null) {
-                final TextView emoji = new TextView(context);
-                emoji.setText(sticker.emoji());
-                emoji.setTextSize(42);
-                emoji.setGravity(Gravity.CENTER);
-                emoji.setBackgroundColor(Color.TRANSPARENT);
-                button = emoji;
-            } else {
-                final ImageButton image = new ImageButton(context);
-                image.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
-                image.setBackgroundColor(Color.TRANSPARENT);
-                image.setPadding(padding, padding, padding, padding);
-                if (sticker.drawable() != 0) {
-                    image.setImageResource(sticker.drawable());
-                } else if (sticker.file() != null) {
-                    image.setImageURI(Uri.fromFile(sticker.file()));
-                }
-                button = image;
+            final ImageButton image = new ImageButton(context);
+            image.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
+            image.setBackgroundColor(Color.TRANSPARENT);
+            image.setPadding(padding, padding, padding, padding);
+            if (sticker.drawable() != 0) {
+                image.setImageResource(sticker.drawable());
+            } else if (sticker.file() != null) {
+                image.setImageURI(Uri.fromFile(sticker.file()));
             }
+            button = image;
             button.setContentDescription(sticker.name());
             button.setOnClickListener(
                     ignored -> {

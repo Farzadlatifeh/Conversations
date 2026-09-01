@@ -27,7 +27,7 @@ public final class BobManager extends AbstractManager {
     private static final int MAX_STICKER_BYTES = 8 * 1024 * 1024;
     private static final int MAX_CACHE_BYTES = 32 * 1024 * 1024;
     private static final Pattern CID_PATTERN =
-            Pattern.compile("^(sha1|sha256)\\+([0-9a-f]+)@bob\\.xmpp\\.org$");
+            Pattern.compile("^(sha1|sha256|sha-256)\\+([0-9a-f]+)@bob\\.xmpp\\.org$");
     private final Map<String, Content> cache = new LinkedHashMap<>(MAX_CACHE_ENTRIES, 0.75f, true);
     private int cacheBytes;
 
@@ -104,7 +104,7 @@ public final class BobManager extends AbstractManager {
                             || !mimeType.startsWith("image/")
                             || bytes.length == 0
                             || bytes.length > MAX_STICKER_BYTES
-                            || !cid.equals(cid(algorithm, bytes))) {
+                            || !normalizeCid(cid).equals(cid(algorithm, bytes))) {
                         throw new IllegalStateException("Invalid BoB sticker payload");
                     }
                     return new Content(cid, mimeType, bytes);
@@ -130,9 +130,13 @@ public final class BobManager extends AbstractManager {
         if (!matcher.matches()) {
             return null;
         }
-        final String algorithm = matcher.group(1);
+        final String algorithm = matcher.group(1).replace("-", "");
         final int expectedLength = "sha1".equals(algorithm) ? 40 : 64;
         return matcher.group(2).length() == expectedLength ? algorithm : null;
+    }
+
+    private static String normalizeCid(final String cid) {
+        return cid.startsWith("sha-256+") ? "sha256+" + cid.substring(8) : cid;
     }
 
     static String cid(final String algorithm, final byte[] bytes) {

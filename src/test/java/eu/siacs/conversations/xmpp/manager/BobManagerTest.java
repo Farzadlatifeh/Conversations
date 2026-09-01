@@ -24,6 +24,10 @@ public class BobManagerTest {
                 "sha256+ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad@bob.xmpp.org",
                 cid);
         assertEquals("sha256", BobManager.parseCidAlgorithm(cid));
+        assertEquals(
+                "sha256",
+                BobManager.parseCidAlgorithm(
+                        "sha-256+ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad@bob.xmpp.org"));
     }
 
     @Test

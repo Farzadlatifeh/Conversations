@@ -3,13 +3,8 @@ package eu.siacs.conversations.ui.stickers;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.TextView;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.content.res.AppCompatResources;
 import com.google.common.base.Strings;
@@ -39,7 +34,7 @@ public final class StickerPack {
     private static final int MAX_PACKS = 50;
     private static final int MAX_ITEMS = 100;
 
-    public static final String STARTER_ID = "open-starter-v2";
+    public static final String STARTER_ID = "open-starter-v3";
 
     private StickerPack() {}
 
@@ -57,24 +52,24 @@ public final class StickerPack {
                                 Item.builtIn(R.drawable.sticker_wow, "😮", "Wow"),
                                 Item.builtIn(R.drawable.sticker_sad, "😢", "Sad"),
                                 Item.builtIn(R.drawable.sticker_thumb, "👍", "Thumbs up"),
-                                Item.builtInEmoji("😂", "😂", "Laughing"),
-                                Item.builtInEmoji("🤣", "🤣", "Rolling laughing"),
-                                Item.builtInEmoji("😉", "😉", "Wink"),
-                                Item.builtInEmoji("😍", "😍", "Heart eyes"),
-                                Item.builtInEmoji("😘", "😘", "Kiss"),
-                                Item.builtInEmoji("😎", "😎", "Cool"),
-                                Item.builtInEmoji("🤔", "🤔", "Thinking"),
-                                Item.builtInEmoji("😴", "😴", "Sleeping"),
-                                Item.builtInEmoji("🤢", "🤢", "Sick"),
-                                Item.builtInEmoji("😡", "😡", "Angry"),
-                                Item.builtInEmoji("🤯", "🤯", "Mind blown"),
-                                Item.builtInEmoji("👋", "👋", "Hello"),
-                                Item.builtInEmoji("👏", "👏", "Clapping"),
-                                Item.builtInEmoji("🙏", "🙏", "Please"),
-                                Item.builtInEmoji("👌", "👌", "OK"),
-                                Item.builtInEmoji("🔥", "🔥", "Fire"),
-                                Item.builtInEmoji("⭐", "⭐", "Star"),
-                                Item.builtInEmoji("🎂", "🎂", "Birthday"))));
+                                Item.builtIn(R.drawable.sticker_rage_01, "Sticker", "Rage 1"),
+                                Item.builtIn(R.drawable.sticker_rage_02, "Sticker", "Rage 2"),
+                                Item.builtIn(R.drawable.sticker_rage_03, "Sticker", "Rage 3"),
+                                Item.builtIn(R.drawable.sticker_rage_04, "Sticker", "Rage 4"),
+                                Item.builtIn(R.drawable.sticker_rage_05, "Sticker", "Rage 5"),
+                                Item.builtIn(R.drawable.sticker_rage_06, "Sticker", "Rage 6"),
+                                Item.builtIn(R.drawable.sticker_rage_07, "Sticker", "Rage 7"),
+                                Item.builtIn(R.drawable.sticker_rage_08, "Sticker", "Rage 8"),
+                                Item.builtIn(R.drawable.sticker_rage_09, "Sticker", "Rage 9"),
+                                Item.builtIn(R.drawable.sticker_rage_10, "Sticker", "Rage 10"),
+                                Item.builtIn(R.drawable.sticker_rage_11, "Sticker", "Rage 11"),
+                                Item.builtIn(R.drawable.sticker_rage_12, "Sticker", "Rage 12"),
+                                Item.builtIn(R.drawable.sticker_rage_13, "Sticker", "Rage 13"),
+                                Item.builtIn(R.drawable.sticker_rage_14, "Sticker", "Rage 14"),
+                                Item.builtIn(R.drawable.sticker_rage_15, "Sticker", "Rage 15"),
+                                Item.builtIn(R.drawable.sticker_rage_16, "Sticker", "Rage 16"),
+                                Item.builtIn(R.drawable.sticker_rage_17, "Sticker", "Rage 17"),
+                                Item.builtIn(R.drawable.sticker_rage_18, "Sticker", "Rage 18"))));
         final File root = root(context);
         final File[] directories = root.listFiles(File::isDirectory);
         if (directories == null) {
@@ -191,27 +186,13 @@ public final class StickerPack {
         if (!output.exists() || output.length() == 0) {
             final Bitmap bitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_8888);
             final Canvas canvas = new Canvas(bitmap);
-            if (item.emoji() != null) {
-                final TextView emoji = new TextView(context);
-                emoji.setText(item.emoji());
-                emoji.setTextColor(Color.BLACK);
-                emoji.setTextSize(TypedValue.COMPLEX_UNIT_PX, 300f);
-                emoji.setGravity(Gravity.CENTER);
-                emoji.setIncludeFontPadding(false);
-                final int exact = View.MeasureSpec.makeMeasureSpec(512, View.MeasureSpec.EXACTLY);
-                emoji.measure(exact, exact);
-                emoji.layout(0, 0, 512, 512);
-                emoji.draw(canvas);
-            } else {
-                final Drawable drawable =
-                        AppCompatResources.getDrawable(context, item.drawable());
-                if (drawable == null) {
-                    bitmap.recycle();
-                    throw new IOException("Sticker drawable is unavailable");
-                }
-                drawable.setBounds(0, 0, 512, 512);
-                drawable.draw(canvas);
+            final Drawable drawable = AppCompatResources.getDrawable(context, item.drawable());
+            if (drawable == null) {
+                bitmap.recycle();
+                throw new IOException("Sticker drawable is unavailable");
             }
+            drawable.setBounds(0, 0, 512, 512);
+            drawable.draw(canvas);
             try (final FileOutputStream stream = new FileOutputStream(output)) {
                 if (!bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)) {
                     throw new IOException("Could not encode sticker");
@@ -299,20 +280,14 @@ public final class StickerPack {
 
     public record Pack(String id, String name, String summary, List<Item> items) {}
 
-    public record Item(
-            @DrawableRes int drawable, File file, String emoji, String fallback, String name) {
+    public record Item(@DrawableRes int drawable, File file, String fallback, String name) {
         private static Item builtIn(
                 @DrawableRes final int drawable, final String fallback, final String name) {
-            return new Item(drawable, null, null, fallback, name);
-        }
-
-        private static Item builtInEmoji(
-                final String emoji, final String fallback, final String name) {
-            return new Item(0, null, emoji, fallback, name);
+            return new Item(drawable, null, fallback, name);
         }
 
         private static Item imported(final File file, final String fallback, final String name) {
-            return new Item(0, file, null, fallback, name);
+            return new Item(0, file, fallback, name);
         }
     }
 
