@@ -198,11 +198,6 @@ public class ConversationFragment extends XmppFragment
                             AttachmentChoice.Type.PICTURE,
                             true),
                     new AttachmentChoice(
-                            R.drawable.ic_sticker_24dp,
-                            R.string.attachment_choice_sticker,
-                            AttachmentChoice.Type.STICKER,
-                            false),
-                    new AttachmentChoice(
                             R.drawable.ic_description_24dp,
                             R.string.attachment_choice_file,
                             AttachmentChoice.Type.FILE,
@@ -1989,11 +1984,6 @@ public class ConversationFragment extends XmppFragment
     }
 
     private void handleAttachmentChoice(final AttachmentChoice.Type choice) {
-        if (choice == AttachmentChoice.Type.STICKER) {
-            setAttachmentChoicesVisibility(false);
-            showStickerPicker();
-            return;
-        }
         attachFile(
                 switch (choice) {
                     case CAMERA -> ATTACHMENT_CHOICE_TAKE_PHOTO;
