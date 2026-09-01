@@ -206,7 +206,7 @@ public class MessageGenerator extends AbstractGenerator {
             paragraph
                     .addChild("img")
                     .setAttribute("src", "cid:" + cid)
-                    .setAttribute("alt", message.getStickerFallback());
+                    .setAttribute("alt", "Sticker");
         } catch (final IOException e) {
             Log.w(Config.LOGTAG, "Could not register Movim-compatible sticker", e);
         }
