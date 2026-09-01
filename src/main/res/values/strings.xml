@@ -1194,7 +1194,6 @@
     <string name="starter_sticker_pack">Built-in starter pack</string>
     <string name="starter_sticker_pack_summary">Twenty-four stickers bundled with Conversations.</string>
     <string name="unnamed_sticker_pack">Sticker pack</string>
-    <string name="choose_custom_sticker">Choose custom image</string>
     <string name="choose_sticker_pack">Choose sticker pack</string>
     <string name="import_sticker_pack">Import pack</string>
     <string name="sticker_pack_uri_hint">xmpp:user@example.org?pubsub;…</string>
