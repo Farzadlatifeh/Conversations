@@ -2,8 +2,7 @@
 // sub-projects/modules.
 buildscript {
     repositories {
-        google()
-        mavenCentral()
+        maven { url 'https://maven.myket.ir' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:9.2.1'
@@ -15,9 +14,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.diffplug.spotless'
 
 repositories {
-    google()
-    mavenCentral()
-    maven { url='https://jitpack.io'}
+    maven { url 'https://maven.myket.ir' }
 }
 
 configurations {

@@ -1270,7 +1270,7 @@ public class XmppConnectionService extends Service {
                 this,
                 this.mInternalEventReceiver,
                 systemBroadcastFilter,
-                ContextCompat.RECEIVER_NOT_EXPORTED);
+                ContextCompat.RECEIVER_EXPORTED);
         final IntentFilter exportedBroadcastFilter = new IntentFilter();
         exportedBroadcastFilter.addAction(TorServiceUtils.ACTION_STATUS);
         ContextCompat.registerReceiver(
