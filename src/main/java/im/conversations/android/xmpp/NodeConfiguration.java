@@ -22,6 +22,13 @@ public class NodeConfiguration implements Map<String, Object> {
                             .put(PERSIST_ITEMS, Boolean.TRUE)
                             .put(ACCESS_MODEL, AccessModel.OPEN)
                             .build());
+    public static final NodeConfiguration OPEN_MAX_ITEMS =
+            new NodeConfiguration(
+                    new ImmutableMap.Builder<String, Object>()
+                            .put(PERSIST_ITEMS, Boolean.TRUE)
+                            .put(ACCESS_MODEL, AccessModel.OPEN)
+                            .put(MAX_ITEMS, "max")
+                            .build());
     public static final NodeConfiguration PRESENCE =
             new NodeConfiguration(
                     new ImmutableMap.Builder<String, Object>()

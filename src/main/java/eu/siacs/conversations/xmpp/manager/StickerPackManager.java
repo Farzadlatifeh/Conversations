@@ -76,14 +76,18 @@ public final class StickerPackManager extends AbstractManager {
                     return Futures.transformAsync(
                             local,
                             installed -> {
+                                final Jid ownJid = getAccount().getJid().asBareJid();
+                                if (source.equals(ownJid)) {
+                                    return Futures.immediateFuture(installed);
+                                }
                                 final var publish =
                                         getManager(PubSubManager.class)
                                                 .publish(
-                                                        getAccount().getJid().asBareJid(),
+                                                        ownJid,
                                                         pack,
                                                         itemId,
                                                         Namespace.STICKERS,
-                                                        NodeConfiguration.OPEN);
+                                                        NodeConfiguration.OPEN_MAX_ITEMS);
                                 final var bestEffortPublish =
                                         Futures.catching(
                                                 publish,
