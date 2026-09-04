@@ -1,0 +1,205 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="+1K+hcaltUBN14gziQNHn5Es">
+        <ns1:pack>
+          <ns1:name>miho</ns1:name>
+          <ns1:summary>miho sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (1)</ns2:desc>
+              <ns2:size>36209</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">MqH3vXkXJn1k3nZ6YBAT2di6ZhXVxk/StVbgX/nI9/0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (10)</ns2:desc>
+              <ns2:size>34478</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">nvoMdblXUoJonvGeMJUgmCOAww17mwNgaQInT1vmi2s=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2810%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (11)</ns2:desc>
+              <ns2:size>34574</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">VDhOMXWPeLL64rhJ/SBTz/Remt7AWhxb0HzdPYc48tY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2811%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (12)</ns2:desc>
+              <ns2:size>44923</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">PaNrKyVZtSrqf/qLcf3K6h5u9l90h+P803hDU/yrh9M=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2812%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (13)</ns2:desc>
+              <ns2:size>35965</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">Za809qdsDuCrDsPxpPAlTrEY4c10Wiap4IXtb+F+dEo=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2813%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (14)</ns2:desc>
+              <ns2:size>29542</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">ypwf+tCDjfHYRWNccIM0mh48IwP9YO/xieCZ5EwIUoY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2814%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (15)</ns2:desc>
+              <ns2:size>36045</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">imQS2JiFO6S0e49p090ZVMDUhMK00LNWvRIpZJCF3wE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2815%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (16)</ns2:desc>
+              <ns2:size>32088</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">LmIVPPPfOfmf8JLCCi0UFbjzILuRhJlkgzeN/nKIrm8=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%2816%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (2)</ns2:desc>
+              <ns2:size>34655</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">3CsvFu1vZNpLVLgHDPPQJ8w9Dm4Hd3VPpuKZn7+wcXc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (3)</ns2:desc>
+              <ns2:size>35529</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">Yu8qycCh5e3ZjZGTL5jadHAzni8ufvI+9Y7sKXjFLfE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (4)</ns2:desc>
+              <ns2:size>30721</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">tIxqUrkiXWHRWUC4/Pk/rO/B0EuwyQq8GkawxE/NsF8=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (5)</ns2:desc>
+              <ns2:size>32655</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">12pOZSdygnaaaXeDDAN6995LXdLfalKXTRrVbnBxjE0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (6)</ns2:desc>
+              <ns2:size>30476</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">Q8wdGYxHvO5EmMEEqWbwESr99hiKfLlK/LPp4yL8UgY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (7)</ns2:desc>
+              <ns2:size>55894</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">EeNaIsEp026KJL/OGCluO0lMuFBcqN/FACUBF52lDDc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (8)</ns2:desc>
+              <ns2:size>37862</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">m/NrSawqkK0qdO6fi6HPiagsizqBJMZWoIhS0g2O3m0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%288%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>miho (9)</ns2:desc>
+              <ns2:size>32984</ns2:size>
+              <ns2:dimensions>400x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">P5AvAPByh8n0hOCamrN4YCc9oA7XwdGvSbBHMJf8RBg=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/miho/miho%20%289%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">+1K+hcaltUBN14gziQNHn5EsiE0BfQcSWeY5J5dYXSI=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>

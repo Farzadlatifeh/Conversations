@@ -1,0 +1,1 @@
+xmpp:farzad@intrachat.iddns.ir?pubsub;action=retrieve;node=urn:xmpp:stickers:0;item=ABUfRai1P1iDG0XphgiFQhup

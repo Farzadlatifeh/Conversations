@@ -1,0 +1,397 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="OalfykuuMd7V7sPFA7VnvYP/">
+        <ns1:pack>
+          <ns1:name>noblerimou</ns1:name>
+          <ns1:summary>noblerimou sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (1)</ns2:desc>
+              <ns2:size>59441</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">DcvKMAf6Xj1ywHFB+6oWmN6/EF/8r1Y/76rZF73fYIU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (10)</ns2:desc>
+              <ns2:size>71323</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">POU58XOHmzt+e7zG+M4Vy6YGiWmjPrwAMQvu8ZsarRk=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2810%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (11)</ns2:desc>
+              <ns2:size>56634</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">mfFa02VpyuQfhaIb/5Q81e2m2sD/OmxI8LFrxuB6uUE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2811%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (12)</ns2:desc>
+              <ns2:size>81033</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">o9DqbpyKovuWnWMFn06cE2RXto0XKoFqq41ufh/vb0Y=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2812%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (13)</ns2:desc>
+              <ns2:size>61366</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">/apv+/u8GQvyAROgVaQyTKiqmhbutCdSelchKAEcAqc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2813%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (14)</ns2:desc>
+              <ns2:size>63037</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">X5jVBzvtNqpMypwINhYd0KZ98Kuxe4aMSOjfj4yJs9E=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2814%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (15)</ns2:desc>
+              <ns2:size>75291</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">NZeESV+ZwVo7Nwx4mQRJYhrmj7I+YvjuySaMyJi7j9Y=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2815%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (16)</ns2:desc>
+              <ns2:size>53979</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">JXvJJh8fFLzXqDSIV9vhPQW7Oc9HxxGtBxfPjbTQ7pg=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2816%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (17)</ns2:desc>
+              <ns2:size>51474</ns2:size>
+              <ns2:dimensions>511x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">LVLlWrRsp68+//BdR4VCtDnTZqp/VpFoVguw+Hb0BaA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2817%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (18)</ns2:desc>
+              <ns2:size>54711</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">yi08pOS/FdFORm61oQkVOubDS4nBD2PilB9TE1kypQY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2818%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (19)</ns2:desc>
+              <ns2:size>55895</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">qq55d4aBo0duQ62eYWtfOZ2KoB+pB4wUdsFo3CDW6cY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2819%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (2)</ns2:desc>
+              <ns2:size>69567</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">1toO+IPrvpnFp0r1UIdW826plXmqFtFWFmqM6igADtc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (20)</ns2:desc>
+              <ns2:size>70446</ns2:size>
+              <ns2:dimensions>511x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">9vY/CWQ2uyid+RlC5Op1aNzI8gKQPy60srkeF0pH4N0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2820%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (21)</ns2:desc>
+              <ns2:size>54121</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">bCF+G8DfmyBRF9huVjaXeanVf1VUSVjmLHe4LvZk1Gw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2821%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (22)</ns2:desc>
+              <ns2:size>56810</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">cp6/CPmYzywYgrpLN3VZmHyZTXDJHJTs/HRd0IgLHAk=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2822%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (23)</ns2:desc>
+              <ns2:size>73279</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">gDQW/yC7v5K/MwzxBMKbVXGzT+sS6RWzSiTY+iuYzd8=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2823%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (24)</ns2:desc>
+              <ns2:size>86570</ns2:size>
+              <ns2:dimensions>511x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">3zb/Jtixa3aTsrCe6oQAE/5JIZIUizrD9yi91ifrVyc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2824%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (25)</ns2:desc>
+              <ns2:size>45929</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">38hDq9WaVJPPZ5jEJ6PLY/Yzkr3OfpqCtvd9Y64ayC4=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2825%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (26)</ns2:desc>
+              <ns2:size>50753</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">TGNUDkPAOyaY5lDx+8Cc3njL2KRGselF/YIR4hKe7NQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2826%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (27)</ns2:desc>
+              <ns2:size>40241</ns2:size>
+              <ns2:dimensions>511x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">C1ctuz8XcbAkNyRGZ50UjIAH4s/dTpyXZnDmmOGZVIw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2827%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (28)</ns2:desc>
+              <ns2:size>48720</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">94gcG2+J8Bo+0xL00F+lxfMNHWrSbfPI/2JdoT6/YOQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2828%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (29)</ns2:desc>
+              <ns2:size>53384</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">YRmm21KsrxGN6WThMYWSUcER2+hhF2cbxbieJiBmnZY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2829%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (3)</ns2:desc>
+              <ns2:size>51928</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">GBoQH/3zTO/VCejfulbTLivQx4WmYgnmJn3wtBVpDT0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (30)</ns2:desc>
+              <ns2:size>43708</ns2:size>
+              <ns2:dimensions>511x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">jrikLGCt7cpVdEiTQUkPayHC0lmMMMkHMtG2MH4hnpg=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2830%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (31)</ns2:desc>
+              <ns2:size>53887</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">1g8BI77a8OF5/WuxYwiNMbUgMygEaenorExJeb9ZUno=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2831%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (32)</ns2:desc>
+              <ns2:size>59362</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">f3RX8G+b5b6r0d3QDbjQIjspz1z1XR357T2+rEIZF9Y=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%2832%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (4)</ns2:desc>
+              <ns2:size>58633</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">jO8R9yF0zWEh8+dcf7UAOo9MlZb7C5xuc62JVScciTA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (5)</ns2:desc>
+              <ns2:size>55061</ns2:size>
+              <ns2:dimensions>511x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">2r1G34g0spS9PfnyZS6kSMrqVL1IP+2G+1gVvN8P/AI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (6)</ns2:desc>
+              <ns2:size>73731</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">Z6LJSyDwlWdCtlJQP9uWsx+i3xZP8whR8zKEfByFPpw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (7)</ns2:desc>
+              <ns2:size>51875</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">u+k1FPBc7ox234sCojnKWYgVkmGj2hbaSokejFAr1c0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (8)</ns2:desc>
+              <ns2:size>65327</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">tN7VWWARlHNM9PJhlmbz9ENBlFY/5JmHwBB75C4C2A0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%288%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>noblerimou (9)</ns2:desc>
+              <ns2:size>50759</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">pHS6h7C4NCcSSTga29WZa2oUz+md9TLl19r+Kky3hPM=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/noblerimou/noblerimou%20%289%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">OalfykuuMd7V7sPFA7VnvYP/PuPRY1PXUNdLqunA3tw=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>

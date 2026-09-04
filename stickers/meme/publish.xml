@@ -1,0 +1,829 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="y0wXm1iGaawDhQddudgos7ve">
+        <ns1:pack>
+          <ns1:name>meme</ns1:name>
+          <ns1:summary>meme sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (1)</ns2:desc>
+              <ns2:size>64136</ns2:size>
+              <ns2:dimensions>482x445</ns2:dimensions>
+              <ns3:hash algo="sha-256">Afj9arSS7GU+uePbbTeNv+MQzWODT1WSoJoWpd1Ffjc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (10)</ns2:desc>
+              <ns2:size>76248</ns2:size>
+              <ns2:dimensions>403x503</ns2:dimensions>
+              <ns3:hash algo="sha-256">imYNlMga7wuNWzTTTUli4uI/1KJHB48n4zdpcTFtVfk=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2810%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (11)</ns2:desc>
+              <ns2:size>132374</ns2:size>
+              <ns2:dimensions>489x489</ns2:dimensions>
+              <ns3:hash algo="sha-256">mLBCWq+e4H7mdrtIlYXI3gusk0MqT6LZhO6SqlvkEMQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2811%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (12)</ns2:desc>
+              <ns2:size>140937</ns2:size>
+              <ns2:dimensions>500x470</ns2:dimensions>
+              <ns3:hash algo="sha-256">zMQiIN2uEJU6gSibzGrgfN3ickr4IeW5HO2Y8c8+Edw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2812%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (13)</ns2:desc>
+              <ns2:size>64596</ns2:size>
+              <ns2:dimensions>483x408</ns2:dimensions>
+              <ns3:hash algo="sha-256">e0+qpK4tPF/V3hVf2wZFhtNon3dDm6uPQ8ij71xcH80=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2813%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (14)</ns2:desc>
+              <ns2:size>88391</ns2:size>
+              <ns2:dimensions>501x430</ns2:dimensions>
+              <ns3:hash algo="sha-256">OkjY6JYwAiZry30If0sjhhsV0T2pP0H1MqfiloNlFrM=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2814%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (15)</ns2:desc>
+              <ns2:size>19203</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">812kzJ+uyLrO2jvUIPuL83zf56sYhKCQViDBFAB3PRw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2815%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (16)</ns2:desc>
+              <ns2:size>67081</ns2:size>
+              <ns2:dimensions>512x379</ns2:dimensions>
+              <ns3:hash algo="sha-256">taSAolBIE7iTW6YxTgF/zrPAW0tdxv6VnZaltW3zBjo=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2816%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (17)</ns2:desc>
+              <ns2:size>63214</ns2:size>
+              <ns2:dimensions>483x459</ns2:dimensions>
+              <ns3:hash algo="sha-256">NjKfwewyiKiVi8OAP0/Fhqg1Ybtltgj2h2Stc/q8R1A=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2817%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (18)</ns2:desc>
+              <ns2:size>19073</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">tHpcctHx5DtN7wsBG0r8wjgsVWelCz2XgWtqGSORZ40=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2818%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (19)</ns2:desc>
+              <ns2:size>44527</ns2:size>
+              <ns2:dimensions>471x401</ns2:dimensions>
+              <ns3:hash algo="sha-256">JG4XYYagAJNi+O6sCFEAeO5Yt3LSCUtDqRcWU903qeE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2819%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (2)</ns2:desc>
+              <ns2:size>18982</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">zSOex9888r6Jz4qUxGeEi5gzhzb97IL4ibgTVwBGrD8=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (20)</ns2:desc>
+              <ns2:size>36533</ns2:size>
+              <ns2:dimensions>475x397</ns2:dimensions>
+              <ns3:hash algo="sha-256">Y9N4YMvISeJQwnfRi4n9xDcAQNQVovNQTqiAPuzl/70=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2820%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (21)</ns2:desc>
+              <ns2:size>20437</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">QHXsKS/A+ocuiQcUiCJtU67PmDlNbSy5quCyiSC7Ie0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2821%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (22)</ns2:desc>
+              <ns2:size>51927</ns2:size>
+              <ns2:dimensions>478x503</ns2:dimensions>
+              <ns3:hash algo="sha-256">iWPP1xF9llMmAYzyBmblYPUx4UmrZd/8OTC68CI5AR0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2822%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (23)</ns2:desc>
+              <ns2:size>17873</ns2:size>
+              <ns2:dimensions>401x481</ns2:dimensions>
+              <ns3:hash algo="sha-256">dPaupvyLmoeIc57Nu+nspC/+uhggI1zjBM1h09M50zU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2823%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (24)</ns2:desc>
+              <ns2:size>36515</ns2:size>
+              <ns2:dimensions>508x379</ns2:dimensions>
+              <ns3:hash algo="sha-256">fx3n3D1O2c8NpVqDKjyFp0ZrfOZ3oCvnUldp9ihxP4Y=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2824%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (25)</ns2:desc>
+              <ns2:size>60468</ns2:size>
+              <ns2:dimensions>431x458</ns2:dimensions>
+              <ns3:hash algo="sha-256">ZzuZrxcNNPrZBa6rXOccw47M9Q0GFmj4EC1V2y4X9JY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2825%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (26)</ns2:desc>
+              <ns2:size>38846</ns2:size>
+              <ns2:dimensions>474x399</ns2:dimensions>
+              <ns3:hash algo="sha-256">zJJz3JnDQYBdzDRO3cWryQUKE9iEhtAGArqYX2tofkM=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2826%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (27)</ns2:desc>
+              <ns2:size>28988</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">X//2yFa9ubG6GDPxpRh9/b3nIUYshrSht4uTSIkMGv0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2827%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (28)</ns2:desc>
+              <ns2:size>78760</ns2:size>
+              <ns2:dimensions>500x498</ns2:dimensions>
+              <ns3:hash algo="sha-256">Kn5dP7jSC0Bwk6h3kfzy+OgNvbYRJgPjcHK0k80KazQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2828%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (29)</ns2:desc>
+              <ns2:size>37560</ns2:size>
+              <ns2:dimensions>388x463</ns2:dimensions>
+              <ns3:hash algo="sha-256">OJQqO3XOs5VZd8Afn5KkHkoAKzW5IrfsJU5YwUW0n6k=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2829%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (3)</ns2:desc>
+              <ns2:size>61666</ns2:size>
+              <ns2:dimensions>437x484</ns2:dimensions>
+              <ns3:hash algo="sha-256">Q/G0K7K1nBcQRW0GsLDPoCPt9oxoZmRVUWOSFZNpbnI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (30)</ns2:desc>
+              <ns2:size>40821</ns2:size>
+              <ns2:dimensions>479x366</ns2:dimensions>
+              <ns3:hash algo="sha-256">EBQ2IlTDxK1bYCApPZFDy/nRD3046VwWgNUPOGxZPVA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2830%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (31)</ns2:desc>
+              <ns2:size>38040</ns2:size>
+              <ns2:dimensions>483x393</ns2:dimensions>
+              <ns3:hash algo="sha-256">I2WK7sNgxqU3fupvh8o1qQkICqD9gDsgCqgNIeWS7FM=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2831%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (32)</ns2:desc>
+              <ns2:size>71027</ns2:size>
+              <ns2:dimensions>440x503</ns2:dimensions>
+              <ns3:hash algo="sha-256">ZjgKCWGmU/qWZlo0SapY5HQGME8cj4W/JrWHPcLiViw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2832%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (33)</ns2:desc>
+              <ns2:size>42658</ns2:size>
+              <ns2:dimensions>469x390</ns2:dimensions>
+              <ns3:hash algo="sha-256">LzVfXNX9R77O6OmpWf1j4HQd2zA9lnBwq5GWQ6f1O/w=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2833%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (34)</ns2:desc>
+              <ns2:size>44548</ns2:size>
+              <ns2:dimensions>482x365</ns2:dimensions>
+              <ns3:hash algo="sha-256">0FD53CpcwYHR6z0o8pnb3sQQQYl4Ca5AD0K+eKdB1T0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2834%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (35)</ns2:desc>
+              <ns2:size>26179</ns2:size>
+              <ns2:dimensions>477x272</ns2:dimensions>
+              <ns3:hash algo="sha-256">V0+qgjL0T3xqMQbHHyV122qtZq5ZP6XlKRJKmN12akw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2835%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (36)</ns2:desc>
+              <ns2:size>58950</ns2:size>
+              <ns2:dimensions>500x429</ns2:dimensions>
+              <ns3:hash algo="sha-256">LoJCkBtvRP/irC1YwvUWyv11vQ9Y6Dzmf/ibTdoS6S8=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2836%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (37)</ns2:desc>
+              <ns2:size>75657</ns2:size>
+              <ns2:dimensions>441x502</ns2:dimensions>
+              <ns3:hash algo="sha-256">l4qjWNsauz6xiHZcaGwpPxtrUeYFViSzNBcxTfwP228=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2837%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (38)</ns2:desc>
+              <ns2:size>21506</ns2:size>
+              <ns2:dimensions>511x445</ns2:dimensions>
+              <ns3:hash algo="sha-256">wIAtX7oVryNqjkMYd/DC0226xWurOogwWnDsnmuzKvI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2838%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (39)</ns2:desc>
+              <ns2:size>73162</ns2:size>
+              <ns2:dimensions>478x503</ns2:dimensions>
+              <ns3:hash algo="sha-256">lVvRdXz+fjxysqlvOFDCx6X2t/TExhQXUsh9yKyso3A=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2839%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (4)</ns2:desc>
+              <ns2:size>33090</ns2:size>
+              <ns2:dimensions>512x512</ns2:dimensions>
+              <ns3:hash algo="sha-256">QfsG09usZm3USIvjMhEC8PRIKVx3KH/Ix3oaqvWqGBQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (40)</ns2:desc>
+              <ns2:size>59219</ns2:size>
+              <ns2:dimensions>497x420</ns2:dimensions>
+              <ns3:hash algo="sha-256">QxoyKbynJb8jwwVjyuRkgREJ5BWuuCoD7DtftLX93Po=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2840%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (41)</ns2:desc>
+              <ns2:size>49261</ns2:size>
+              <ns2:dimensions>474x445</ns2:dimensions>
+              <ns3:hash algo="sha-256">vbGOBkVys5WEBhdq9ytMzl7r4atvH1YO/p1Jy6jo824=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2841%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (42)</ns2:desc>
+              <ns2:size>58725</ns2:size>
+              <ns2:dimensions>465x427</ns2:dimensions>
+              <ns3:hash algo="sha-256">TU2CJlCADl7iDLLeSPVcbTZa1eY7DMPk+R+ejpM9KMA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2842%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (43)</ns2:desc>
+              <ns2:size>77720</ns2:size>
+              <ns2:dimensions>451x502</ns2:dimensions>
+              <ns3:hash algo="sha-256">OvEIejVAgXF9lHvg0+paUb08alfGkT6H5K6A4qF2v50=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2843%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (44)</ns2:desc>
+              <ns2:size>72993</ns2:size>
+              <ns2:dimensions>511x388</ns2:dimensions>
+              <ns3:hash algo="sha-256">V6R4KHKWbMTs1nVdhKH0gfo0oRMBBlZZkFct+lSW7QM=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2844%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (45)</ns2:desc>
+              <ns2:size>59786</ns2:size>
+              <ns2:dimensions>486x416</ns2:dimensions>
+              <ns3:hash algo="sha-256">PVs7hNC+S4AHnnX8JbqAmtfbGJGrmJC4K8RaA616g/w=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2845%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (46)</ns2:desc>
+              <ns2:size>46667</ns2:size>
+              <ns2:dimensions>482x408</ns2:dimensions>
+              <ns3:hash algo="sha-256">JQ6uOfpMmZlWrlPF/Le1bp8Bz9sb4ejiSBafXyu42YA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2846%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (47)</ns2:desc>
+              <ns2:size>43537</ns2:size>
+              <ns2:dimensions>464x281</ns2:dimensions>
+              <ns3:hash algo="sha-256">p2bDBgTT4Wd5TEE10H+ddN4qAZ0OiPky3xp88MoLSJc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2847%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (48)</ns2:desc>
+              <ns2:size>51204</ns2:size>
+              <ns2:dimensions>500x454</ns2:dimensions>
+              <ns3:hash algo="sha-256">oLZe38BiuD64H/c8jsWwR+s7KpST1c7kDb4pm2jCJMs=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2848%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (49)</ns2:desc>
+              <ns2:size>21523</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">5wXTeibWZctiV/gMAtjISmHB50ai947LqxMhQm+IcdY=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2849%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (5)</ns2:desc>
+              <ns2:size>37286</ns2:size>
+              <ns2:dimensions>478x313</ns2:dimensions>
+              <ns3:hash algo="sha-256">24tGvoSLvYyoOlOwQiMoRubS9F21b6kl60N20wjQBrQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (50)</ns2:desc>
+              <ns2:size>25561</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">Wn0cH6PnDA9c6Gv/9oQSb36Oh0RYZaFM0rMkvfBb5t4=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2850%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (51)</ns2:desc>
+              <ns2:size>77321</ns2:size>
+              <ns2:dimensions>465x505</ns2:dimensions>
+              <ns3:hash algo="sha-256">WggBU1Oc9U+TaBFkOFeLH/cp0diAvmU0akPVutsK+14=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2851%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (52)</ns2:desc>
+              <ns2:size>54245</ns2:size>
+              <ns2:dimensions>451x500</ns2:dimensions>
+              <ns3:hash algo="sha-256">iSb9lR7dyJ8KQLpoBc+kZaLj1ERw3hsNaFUASmzg5eU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2852%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (53)</ns2:desc>
+              <ns2:size>108170</ns2:size>
+              <ns2:dimensions>440x502</ns2:dimensions>
+              <ns3:hash algo="sha-256">1HHIF3jReN0ZWAdoCOtF1TSPige/wXS2yTCtY6nqNb4=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2853%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (54)</ns2:desc>
+              <ns2:size>67498</ns2:size>
+              <ns2:dimensions>506x502</ns2:dimensions>
+              <ns3:hash algo="sha-256">qk0xBlbEl3TGsduaIwwv7gq2Tl69M6MGn+KQNIQikjE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2854%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (55)</ns2:desc>
+              <ns2:size>53082</ns2:size>
+              <ns2:dimensions>480x404</ns2:dimensions>
+              <ns3:hash algo="sha-256">3lT/p0p99VPUKHK3mJ7/URy4cf36W+Jb/NuFdl9ZPNg=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2855%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (56)</ns2:desc>
+              <ns2:size>50999</ns2:size>
+              <ns2:dimensions>332x448</ns2:dimensions>
+              <ns3:hash algo="sha-256">tPfg1vDjLHSX56/mEDqBWjU+FdAzx6jqaqaIo+ugGZQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2856%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (57)</ns2:desc>
+              <ns2:size>71888</ns2:size>
+              <ns2:dimensions>449x505</ns2:dimensions>
+              <ns3:hash algo="sha-256">OFkG1WG6aM7zIeojpvL2I5l6lb/PClnszDlmW/mjS8U=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2857%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (58)</ns2:desc>
+              <ns2:size>96611</ns2:size>
+              <ns2:dimensions>481x503</ns2:dimensions>
+              <ns3:hash algo="sha-256">XbxCCvzmg8DkG0p4Phsai4HrvXAs/Vaib4WKLDEMqPE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2858%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (59)</ns2:desc>
+              <ns2:size>28202</ns2:size>
+              <ns2:dimensions>433x436</ns2:dimensions>
+              <ns3:hash algo="sha-256">pKF8KgA82srUYk2YF8CT14y8aMo2/qpOZLJAW2+PR0w=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2859%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (6)</ns2:desc>
+              <ns2:size>35836</ns2:size>
+              <ns2:dimensions>479x334</ns2:dimensions>
+              <ns3:hash algo="sha-256">xSEp3esA0wy6M1ZMFkdeGQFMo6xVH0+BTFGArmg+hnE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (60)</ns2:desc>
+              <ns2:size>66369</ns2:size>
+              <ns2:dimensions>470x464</ns2:dimensions>
+              <ns3:hash algo="sha-256">zTNo7xvqe+ySzKVI4Y0fhCEyOZbm7rrDwwDrv1a4fnk=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2860%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (61)</ns2:desc>
+              <ns2:size>34247</ns2:size>
+              <ns2:dimensions>452x334</ns2:dimensions>
+              <ns3:hash algo="sha-256">fhH3Kdk5kOBjJdjvqVHM6szsL/Cn/MLduvWoCzL/gZ8=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2861%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (62)</ns2:desc>
+              <ns2:size>32536</ns2:size>
+              <ns2:dimensions>512x317</ns2:dimensions>
+              <ns3:hash algo="sha-256">lj1+3UPg/xYhoW+mlGuQu3cMiPSTGZW/BG56H4Nr57g=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2862%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (63)</ns2:desc>
+              <ns2:size>33210</ns2:size>
+              <ns2:dimensions>455x423</ns2:dimensions>
+              <ns3:hash algo="sha-256">+hoT3hmBHb7AcOB4/e/CQcbZrDy2HrKGBdOM8L4Y4GI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2863%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (64)</ns2:desc>
+              <ns2:size>56256</ns2:size>
+              <ns2:dimensions>472x502</ns2:dimensions>
+              <ns3:hash algo="sha-256">O1rtXT475jPrEsX2kbjEEgovkMPi1YRUmF7hawoLNqw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2864%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (65)</ns2:desc>
+              <ns2:size>53525</ns2:size>
+              <ns2:dimensions>462x451</ns2:dimensions>
+              <ns3:hash algo="sha-256">+YfPqd55+OnTNL3DCf4gMLVX3bnB4kKx8GD3SUWoCd4=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2865%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (66)</ns2:desc>
+              <ns2:size>45401</ns2:size>
+              <ns2:dimensions>499x435</ns2:dimensions>
+              <ns3:hash algo="sha-256">SXzJjiBmCrDk3aJ983dH52lDZ9mk0HIwVy8wN7SRmQE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2866%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (67)</ns2:desc>
+              <ns2:size>50965</ns2:size>
+              <ns2:dimensions>461x478</ns2:dimensions>
+              <ns3:hash algo="sha-256">7hPQbvDt59yoHJ3todiJ8UHY774nVwYC5QwwUKLwe+0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2867%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (68)</ns2:desc>
+              <ns2:size>53029</ns2:size>
+              <ns2:dimensions>474x367</ns2:dimensions>
+              <ns3:hash algo="sha-256">0mXEP2QRnitHeOk7qQ/FQc7YKPPj9EXs9vE09JYIy6E=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%2868%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (7)</ns2:desc>
+              <ns2:size>25902</ns2:size>
+              <ns2:dimensions>300x300</ns2:dimensions>
+              <ns3:hash algo="sha-256">OOGYcxaZlR2aQz/uqFyOAUu6CzrMyNMBA0R3kzwOkCs=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (8)</ns2:desc>
+              <ns2:size>76301</ns2:size>
+              <ns2:dimensions>437x506</ns2:dimensions>
+              <ns3:hash algo="sha-256">YNDMcJ+BcZfortG4H6371TSubb8713/1+XCPpMQ+olo=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%288%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>meme (9)</ns2:desc>
+              <ns2:size>61456</ns2:size>
+              <ns2:dimensions>438x458</ns2:dimensions>
+              <ns3:hash algo="sha-256">RTDa0K8KmSdF1zETOFVpfYFdRqOQnTDU1lih1v63lJU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/meme/meme%20%289%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">y0wXm1iGaawDhQddudgos7veew/XYYLgVK6ztNydIXs=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>

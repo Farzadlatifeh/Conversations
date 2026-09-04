@@ -1,0 +1,97 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="0ePI6M9WrXSb1MYCjKIBTPe1">
+        <ns1:pack>
+          <ns1:name>mochi</ns1:name>
+          <ns1:summary>mochi sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (1)</ns2:desc>
+              <ns2:size>9400</ns2:size>
+              <ns2:dimensions>280x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">yICbqVh3ye7/8H+d7CIHhUp09kC93Vdbdpjm6G0NKJE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (2)</ns2:desc>
+              <ns2:size>8529</ns2:size>
+              <ns2:dimensions>280x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">jp/N1UKpM5bV9BNkVA+SHB1jwUlT1M6/6oyiimAMxFw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (3)</ns2:desc>
+              <ns2:size>9038</ns2:size>
+              <ns2:dimensions>280x195</ns2:dimensions>
+              <ns3:hash algo="sha-256">V4hVz8Tb7FIWRtyIxeW2KlB9ook23SJ3fGVjxLqi2i4=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (4)</ns2:desc>
+              <ns2:size>7878</ns2:size>
+              <ns2:dimensions>230x147</ns2:dimensions>
+              <ns3:hash algo="sha-256">usrXj6x8jlEcMLbvOTpdxf9pmapV0dvVIL/Y4vqU+Ao=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (5)</ns2:desc>
+              <ns2:size>9318</ns2:size>
+              <ns2:dimensions>280x180</ns2:dimensions>
+              <ns3:hash algo="sha-256">NUHqnN6PrEFl3amktePAOcCGhO+KMvn2Fg9vPHBJmoI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (6)</ns2:desc>
+              <ns2:size>8674</ns2:size>
+              <ns2:dimensions>280x150</ns2:dimensions>
+              <ns3:hash algo="sha-256">focc7PwMJj7Ps9AiAgfDLazuvGB0ui2nMJnYl+EK8uQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>mochi (7)</ns2:desc>
+              <ns2:size>8765</ns2:size>
+              <ns2:dimensions>280x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">3XYeozQHLywiSiu6yfeWYmDME9ngLO7tlHt1pziBjbA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/mochi/mochi%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">0ePI6M9WrXSb1MYCjKIBTPe10LUCixlyRo63Ie1wXJk=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>

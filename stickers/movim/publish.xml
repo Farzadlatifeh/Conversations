@@ -1,0 +1,205 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="ABUfRai1P1iDG0XphgiFQhup">
+        <ns1:pack>
+          <ns1:name>movim</ns1:name>
+          <ns1:summary>movim sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (1)</ns2:desc>
+              <ns2:size>26591</ns2:size>
+              <ns2:dimensions>339x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">hC0+F98GyQns1gR+8GCtmWhr/m61Byh/m1hgUWIEgMw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (10)</ns2:desc>
+              <ns2:size>26394</ns2:size>
+              <ns2:dimensions>360x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">xmBkf3+XAZ9KsOCIe7DvJQmNiDELcIYHS9HNk3lkUSE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2810%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (11)</ns2:desc>
+              <ns2:size>29894</ns2:size>
+              <ns2:dimensions>322x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">BN5BnVfdbRPxvyiDFO77a03OfbLHjz/M0vuXkKUdPaw=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2811%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (12)</ns2:desc>
+              <ns2:size>28409</ns2:size>
+              <ns2:dimensions>372x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">DTTTfDw4E2f9GkpZPYL75HtjkvBgTNCroM21Zr8t1uc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2812%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (13)</ns2:desc>
+              <ns2:size>27426</ns2:size>
+              <ns2:dimensions>394x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">dXWY3Jy3RgeI3MkJ80fSr00Mt5Z617QiQOUO4/wZPHo=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2813%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (14)</ns2:desc>
+              <ns2:size>23652</ns2:size>
+              <ns2:dimensions>400x395</ns2:dimensions>
+              <ns3:hash algo="sha-256">uFDtM3LcITOP9Keq0WKJtbmcd4pO1EfRm/7rO0zOjnA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2814%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (15)</ns2:desc>
+              <ns2:size>19847</ns2:size>
+              <ns2:dimensions>400x303</ns2:dimensions>
+              <ns3:hash algo="sha-256">ufDaRxwhyiDjid7UB/Y7tBwcI6K8842ZLwuwQG0bMLI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2815%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (16)</ns2:desc>
+              <ns2:size>21411</ns2:size>
+              <ns2:dimensions>400x362</ns2:dimensions>
+              <ns3:hash algo="sha-256">BhyFaIwUChe8kURFB6qTDC9opYXYEXi0WEUCNgKwPCI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%2816%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (2)</ns2:desc>
+              <ns2:size>22637</ns2:size>
+              <ns2:dimensions>326x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">+CD7tQeOSIBaRCfI5q69DDoWZc5QVjk+15hNY6ddCFc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (3)</ns2:desc>
+              <ns2:size>22324</ns2:size>
+              <ns2:dimensions>338x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">33yDhUaqMTU7kG7+iBrHtJ8SsB3aAgrfMijVaSUpN0E=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (4)</ns2:desc>
+              <ns2:size>28055</ns2:size>
+              <ns2:dimensions>392x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">lOJOXz+Yj0h9owqRbGIQzuOtvtA9MIjB8tx8QaBTeOo=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (5)</ns2:desc>
+              <ns2:size>29285</ns2:size>
+              <ns2:dimensions>365x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">qM4ZrtczO77Z4bsSldm+1FmDsZVaFrDvhdCpLFm6YPg=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (6)</ns2:desc>
+              <ns2:size>30023</ns2:size>
+              <ns2:dimensions>385x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">csHcs34Gh6bRbwz4TOvL1VpNNvlxYo/qsrIASmAvbag=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (7)</ns2:desc>
+              <ns2:size>25676</ns2:size>
+              <ns2:dimensions>400x360</ns2:dimensions>
+              <ns3:hash algo="sha-256">D3rzcrylJhEdZqFaqBXvTc52avHF15S4y/gDJKhnCGA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (8)</ns2:desc>
+              <ns2:size>26132</ns2:size>
+              <ns2:dimensions>334x400</ns2:dimensions>
+              <ns3:hash algo="sha-256">Q1/gfkAgPSDHBQvqaZCw6AvQDV7enYrPS3ABAnHsB3c=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%288%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>movim (9)</ns2:desc>
+              <ns2:size>38967</ns2:size>
+              <ns2:dimensions>400x396</ns2:dimensions>
+              <ns3:hash algo="sha-256">jsSe6/mUXKGyj9BIklJRIrsD4NilJ6NCX3A5R31Hqy0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/movim/movim%20%289%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">ABUfRai1P1iDG0XphgiFQhupSTTsnCheeZd8P2PsEUk=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>

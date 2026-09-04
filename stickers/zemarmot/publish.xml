@@ -1,0 +1,133 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="YxVut6gZq8/crC48kF2qs6Nq">
+        <ns1:pack>
+          <ns1:name>Zemarmot</ns1:name>
+          <ns1:summary>Zemarmot sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (1)</ns2:desc>
+              <ns2:size>16453</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">4fv83AdGjuzXibSaTLkKtXuSB2mDkLSwmqDfByRA0YI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (10)</ns2:desc>
+              <ns2:size>16232</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">tmcJUQ7WkBwyR1Zj8DX7W2/zfZ3+eYNjpLCQBTqJ/yo=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%2810%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (2)</ns2:desc>
+              <ns2:size>15781</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">+46N15iCIx7TsvoR/INLmt5cPw4qlEYKDOzZOQFVL7Q=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (3)</ns2:desc>
+              <ns2:size>16645</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">CRi2OTMWTSNRmMdCMWEQlFMhsrfheAzR4hXq6mnuPUA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (4)</ns2:desc>
+              <ns2:size>15790</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">KDAN1xnIGb89sipXn86/S1TDQcM5zfhDCDsEDfPuinQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (5)</ns2:desc>
+              <ns2:size>19074</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">+Uq+W/HdOj3+/uZ75xj0noAetl88cej7glOkTR8X2UU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (6)</ns2:desc>
+              <ns2:size>17737</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">+RqueHCjGbgs5LjILIBRRhzGY9C+eh+C4M8/TWV6F9A=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (7)</ns2:desc>
+              <ns2:size>18929</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">96HXzedFJDhELUgd7jXU/eEXRLjd/BaxHRIXHaXcMeU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (8)</ns2:desc>
+              <ns2:size>15919</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">UEdv19KQGcxRLEbJdVHvJ1qYbRkE4/9HvXsw/ctWhP0=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%288%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>zemarmot (9)</ns2:desc>
+              <ns2:size>18036</ns2:size>
+              <ns2:dimensions>200x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">T7oT661oUb1k4QfR66ujAb6kZcmDsYcSmq8niAp0Nts=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/zemarmot/zemarmot%20%289%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">YxVut6gZq8/crC48kF2qs6NqWC5lMNcrlzJqLiEqC7k=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>

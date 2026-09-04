@@ -1,0 +1,205 @@
+<iq xmlns:ns0="http://jabber.org/protocol/pubsub" xmlns:ns1="urn:xmpp:stickers:0" xmlns:ns2="urn:xmpp:file:metadata:0" xmlns:ns3="urn:xmpp:hashes:2" xmlns:ns4="urn:xmpp:sfs:0" xmlns:ns5="http://jabber.org/protocol/url-data" type="set" to="farzad@intrachat.iddns.ir" id="publish-sticker-pack">
+  <ns0:pubsub>
+    <ns0:publish node="urn:xmpp:stickers:0">
+      <ns0:item id="a53EbkuJ5is/KxXYXm6zCa65">
+        <ns1:pack>
+          <ns1:name>raccon</ns1:name>
+          <ns1:summary>raccon sticker pack</ns1:summary>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (1)</ns2:desc>
+              <ns2:size>30971</ns2:size>
+              <ns2:dimensions>305x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">QCAU7AadVHOtpUTbYdlNNsjVfOF35HQNnYpifF1wUCs=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%281%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (10)</ns2:desc>
+              <ns2:size>30636</ns2:size>
+              <ns2:dimensions>229x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">116sKhyfjsurJREtpmox+nPKfdLWx8pZGS/FXse6EaE=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2810%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (11)</ns2:desc>
+              <ns2:size>36107</ns2:size>
+              <ns2:dimensions>239x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">rywimOm5cN9lViDH0P5JdXXfsl+IaBfsHCFoWHqrK60=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2811%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (12)</ns2:desc>
+              <ns2:size>32620</ns2:size>
+              <ns2:dimensions>223x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">/hlqD2IF7miBSTcvAwcAaG1XJQuEvP0eQia+MbHICBc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2812%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (13)</ns2:desc>
+              <ns2:size>30784</ns2:size>
+              <ns2:dimensions>200x212</ns2:dimensions>
+              <ns3:hash algo="sha-256">dbOvDT3Yttbt/2fKyvTioA0XgYAqHT649cJGSgJELgs=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2813%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (14)</ns2:desc>
+              <ns2:size>35396</ns2:size>
+              <ns2:dimensions>200x206</ns2:dimensions>
+              <ns3:hash algo="sha-256">+EkM7Y9OvCRSEkjW+oZFCIBf8V32yG5ccppbUCKSlpQ=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2814%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (15)</ns2:desc>
+              <ns2:size>34923</ns2:size>
+              <ns2:dimensions>241x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">dpSFRhbKXyKCmmmCjDRaVSHpSVcLKRicgtH3WKtZPuU=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2815%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (16)</ns2:desc>
+              <ns2:size>35427</ns2:size>
+              <ns2:dimensions>308x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">v/Mi+/Igl9kLVyyWG3RcNWo83HvHskaq9ldIdnRIjKI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%2816%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (2)</ns2:desc>
+              <ns2:size>26206</ns2:size>
+              <ns2:dimensions>242x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">lQKvoxI+HXgdtmLhgv2yJrAz7sJ0kTuxtmUyWlUMvVA=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%282%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (3)</ns2:desc>
+              <ns2:size>30291</ns2:size>
+              <ns2:dimensions>221x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">EjDvawZmdK4u1g8SD3m0cCHMUliH+oUKv4nyU1CEQX4=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%283%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (4)</ns2:desc>
+              <ns2:size>44653</ns2:size>
+              <ns2:dimensions>218x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">XsANv2HtFjwKtw+M0MKW5xZcbkYuYPKthyiVNDkebIc=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%284%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (5)</ns2:desc>
+              <ns2:size>38018</ns2:size>
+              <ns2:dimensions>321x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">EUvZu0GU48yEijeD62OmzqE3Ls9j6zlWDGZs9p2y444=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%285%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (6)</ns2:desc>
+              <ns2:size>33484</ns2:size>
+              <ns2:dimensions>215x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">DRLBl01GuR7WcQQox0j3dw5Vq3OZgy9Nw6Gg+t5EMbs=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%286%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (7)</ns2:desc>
+              <ns2:size>31016</ns2:size>
+              <ns2:dimensions>222x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">0nPhD/nbWHMUDsT9uyPEyGgmR3uE0mdykR3oJR/5njI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%287%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (8)</ns2:desc>
+              <ns2:size>30369</ns2:size>
+              <ns2:dimensions>221x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">I3SxbQBMNMTQcW7fELWQOIYLh8YS/oQdDtZhuamRIbI=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%288%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns1:item>
+            <ns2:file>
+              <ns2:media-type>image/png</ns2:media-type>
+              <ns2:desc>raccon (9)</ns2:desc>
+              <ns2:size>25923</ns2:size>
+              <ns2:dimensions>267x200</ns2:dimensions>
+              <ns3:hash algo="sha-256">rrr99zWWUvoOlZGumrEyV9a0RqTxgXD5MUODK0hl8Tk=</ns3:hash>
+            </ns2:file>
+            <ns4:sources>
+              <ns5:url-data target="https://intrachat.iddns.ir:5443/stickers/raccon/raccon%20%289%29.png" />
+            </ns4:sources>
+          </ns1:item>
+          <ns3:hash algo="sha-256">a53EbkuJ5is/KxXYXm6zCa65XfhLqSQ4aiXBVtB+BZA=</ns3:hash>
+        </ns1:pack>
+      </ns0:item>
+    </ns0:publish>
+  </ns0:pubsub>
+</iq>
