@@ -21,6 +21,23 @@
 
 A free and open-source Jabber/XMPP client for Android. Easy to use, reliable, and battery-friendly. With built-in support for images, group chats, and location sharing. End-to-end encrypted by default. Connects to all modern Jabber, XMPP, and Snikket servers.
 
+## About this fork
+
+The original **Conversations** client is owned and maintained by the official Conversations project/team, with upstream development hosted at [iNPUTmice/Conversations on Codeberg](https://codeberg.org/iNPUTmice/Conversations). Original project ownership, upstream direction, and core client development remain with that team.
+
+This GitHub repository is a customized fork of Conversations. It builds on the upstream GPLv3 codebase and adds interoperability and usability improvements while preserving the original project's identity and credit.
+
+### Improvements in this fork
+
+* **XEP-0449 sticker pack support** with URI-based pack import, validation, download, and local installation
+* **Multiple reusable sticker packs** stored through XMPP PubSub/PEP, allowing several packs to coexist instead of replacing one another
+* **Multi-pack sticker picker UI** with pack tabs/options and bundled starter sticker assets
+* **Sticker-aware sending** with fallback text and pack identification for better compatibility between clients
+* **Movim sticker interoperability**, including recognition and rendering of Movim XHTML-IM stickers delivered through XEP-0231 Bits of Binary (BoB)
+* Improved handling of imported sticker packs so importing a pack from the user's own PEP does not unnecessarily republish it and disturb other stored packs
+
+These additions are specific to this fork and should not be interpreted as features of the current upstream Conversations release unless they have also been merged upstream.
+
 
 ## Features
 * End-to-end encryption with [OMEMO](http://conversations.im/omemo/) or [OpenPGP](http://openpgp.org/about/)
