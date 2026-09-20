@@ -1,0 +1,37 @@
+{
+  "name": "translation",
+  "version": "1.0.0",
+  "description": "High-quality translation and translation review for general, technical, scientific, and document content.",
+  "author": {
+    "name": "Farzad Latifeh",
+    "url": "https://github.com/Farzadlatifeh"
+  },
+  "homepage": "https://github.com/Farzadlatifeh/Conversations/tree/translation-plugin/translation-marketplace",
+  "repository": "https://github.com/Farzadlatifeh/Conversations",
+  "keywords": [
+    "translation",
+    "localization",
+    "persian",
+    "technical-translation",
+    "scientific-translation",
+    "rtl"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Translation",
+    "shortDescription": "Accurate technical and scientific translation",
+    "longDescription": "Translate and review general, technical, scientific, and document content while preserving terminology, structure, numbers, units, citations, equations, footnotes, tables, and mixed RTL/LTR text.",
+    "developerName": "Farzad Latifeh",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://github.com/Farzadlatifeh/Conversations/tree/translation-plugin/translation-marketplace",
+    "privacyPolicyURL": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "termsOfServiceURL": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    "defaultPrompt": [
+      "Translate this accurately while preserving terminology and formatting.",
+      "Translate this technical text to Persian and review it for omissions.",
+      "Check this translation against the source and fix inconsistencies."
+    ],
+    "screenshots": []
+  }
+}
