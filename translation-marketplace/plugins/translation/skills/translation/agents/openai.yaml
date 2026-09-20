@@ -1,0 +1,6 @@
+interface:
+  display_name: "Translation"
+  short_description: "Accurate technical and scientific translation"
+  default_prompt: "Use $translation to translate the provided content accurately while preserving terminology, structure, numbers, units, citations, equations, and formatting."
+policy:
+  allow_implicit_invocation: true
